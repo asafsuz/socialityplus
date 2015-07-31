@@ -17,7 +17,7 @@ class Posts {
 		
 		return $result;
 	}
-	//TESSSSSTINNGGGGGGG!!! AGAIN!!
+
 
 	public function deletePost( $task_id ) {
 		$result = $this->_db->query( "DELETE FROM posts WHERE post_id = $task_id" );

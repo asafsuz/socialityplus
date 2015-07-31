@@ -9,7 +9,7 @@
 		<div id="profile_halfBottom">
 			<div class="posts-table">
 				<div id="status">
-					<input type="text" id="post">
+					<textarea id="post" placeholder=""></textarea>
 					<input type="submit" id="submit" value="POST">
 				</div>
 			</div>
