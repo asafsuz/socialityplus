@@ -3,9 +3,6 @@ require 'Slim/Slim.php';
 \Slim\Slim::registerAutoloader();
 $app = new \Slim\Slim();
 
-//comment to check shit out!!
-// hello
-
 $app->contentType( 'application/json' );
 
 require_once dirname( __FILE__ ) . '/../core/User.class.php';
