@@ -4,6 +4,7 @@ require 'Slim/Slim.php';
 $app = new \Slim\Slim();
 
 //comment to check shit out!!
+//new on eclipse
 
 $app->contentType( 'application/json' );
 
