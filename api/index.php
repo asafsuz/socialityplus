@@ -7,6 +7,7 @@ $app->contentType( 'application/json' );
 
 require_once dirname( __FILE__ ) . '/../core/User.class.php';
 require_once dirname( __FILE__ ) . '/../core/Login.class.php';
+require_once dirname( __FILE__ ) . '/../core/Posts.class.php';
 $user = new User();
 
 $app->get( '/user/', function() use ( $user ) {
@@ -55,9 +56,11 @@ $app->post( '/login/', function() use ( $app ) {
 
 	var_dump( $login->match( $username, $password ) );
 });
-$app->post('/Post/:id/', function() use ( $app ) {
+
+$post = new Posts();
+$app->post('/post/', function() use ($post, $app ) {
 	$new_post = json_decode( $app->request->getBody(),true );
-	 $success = $user->createNewPost( $new_post );
+	 $success = $post->createNewPost( $new_post, $app );
 	
 });
 $app->run();
