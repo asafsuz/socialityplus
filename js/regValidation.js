@@ -6,8 +6,26 @@ $(document).ready(function(){
 	var repass = $('#repass');
 	
 	
-	$('')
+	registration.submit(function(){
+		if(validFirstname() & validLastname() & validEmail() & validPassword() & validRepass()){
+			return true;
+		}else{
+			return false;
+		}
+		}
+	});
 	
+	function validFirstname(){
+		if(firstname.val() == ''){
+			firstname.addClass("error");
+			firstname.text("You must type a name.");
+			firstname.addClass("error");
+			return false;
+		}else{
+			firstname.removeClass("error");
+			return true;
+		}
+	}
 	
 	
 	
@@ -22,4 +40,4 @@ $(document).ready(function(){
 	}
 	
 	
-}
+});
