@@ -1,12 +1,13 @@
 $(document).ready(function(){
-	$("input[type=button]").on( "click", function(){
+	$("input[type=submit]").on( "click", function(){
 		alert('helloooo');
 		$.ajax({
 			url: "api/post/",
 			type: "POST",
 			dataType: "JSON",
 			data: JSON.stringify({
-				post_content: $("input[type=text]").val(),
+				post_content: $("input[type=textarea]").val(),
+				
 			
 			}),
 			success: function(response){

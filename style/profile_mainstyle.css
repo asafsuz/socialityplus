@@ -16,6 +16,20 @@ body
 	position: absolute;
 }
 
+#profileImage
+{
+	width: 105px;
+    height: 105px;
+    background: blue;
+    border-top-left-radius: 10em;
+    border-top-right-radius: 10em;
+    border-bottom-right-radius: 6em;
+    border-bottom-left-radius: 6em;
+    margin-top: -26px;
+    margin-left: 20px;
+}
+
+
 #profile_halfUpper
 {
 	width: 980px;
@@ -31,6 +45,43 @@ body
     border: 1px solid green;
     margin: -19px auto;
 }
+#posts-table
+{
+	border: 1px solid black;
+    width: 560px;	
+    height: 600px;
+}
+#status
+{
+	height: 130px;
+    background-color: #FFFFFF;
+    border: 1px solid black;
+        
+}
+#status-details
+{
+  height: 25px;
+  background-color: #ECE8E8;
+}
+#status > textarea
+	{
+	resize: none;
+    width: 553px;
+    height: 60px;
+	}
+#status > #submit
+{
+    float: right;
+    background-color: blue;
+    border-radius: 5px;
+    color: white;
+    margin-right: 10px;
+    height: 27px;
+    width: 48px;	
+	
+}
+
+
 
 #coverImage
 {
@@ -40,31 +91,10 @@ body
 	margin: 0 auto;
 }
 
-#profileImage
-{
-	width: 105px;
-    height: 105px;
-    background: blue;
-    border-top-left-radius: 10em;
-    border-top-right-radius: 10em;
-    border-bottom-right-radius: 6em;
-    border-bottom-left-radius: 6em;
-    margin-top: -26px;
-    margin-left: 20px;
-}
 
-.posts-table
-{
-	border: 1px solid black;
-    width: 560px;	
-    background: blue;
-}
 
-#status
-{
-	height: 100px;
-	
-}
+
+
 
 
 

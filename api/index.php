@@ -55,6 +55,10 @@ $app->post( '/login/', function() use ( $app ) {
 
 	var_dump( $login->match( $username, $password ) );
 });
-
+$app->post('/Post/:id/', function() use ( $app ) {
+	$new_post = json_decode( $app->request->getBody(),true );
+	 $success = $user->createNewPost( $new_post );
+	
+});
 $app->run();
 ?>

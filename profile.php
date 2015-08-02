@@ -4,15 +4,19 @@
 		<div id="profile_halfUpper">
 			<div id="coverImage"></div>
 			<div id="profileImage"></div>
-	
 		</div>
+		
 		<div id="profile_halfBottom">
-			<div class="posts-table">
+		
+			<div id="posts-table">
 				<div id="status">
-					<textarea id="post" placeholder=""></textarea>
+					<div id="status-details"><img src=""> Asaf, Update your status</div>
+					<textarea id="post" placeholder="What's on your mind?"></textarea>
 					<input type="submit" id="submit" value="POST">
 				</div>
 			</div>
+			
+		</div>
 			
 			<div id="sideMenu">
 			
