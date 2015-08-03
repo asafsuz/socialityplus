@@ -19,25 +19,10 @@ $app->get( '/user/:id/', function( $id ) use ( $user ) {
 });
 
 $app->post( '/user/', function() use ( $user, $app ) {
- $new_user = json_decode( $app->request->getBody(),true );
-  $success = $user->createNewUser( $new_user );
- if ( !$success ){
-  echo "there is a problem with the api conection";
- }
- else{
-  echo "User Created"; 
- }
+	$new_user = json_decode( $app->request->getBody(),true );
+	$success = $user->createNewUser( $new_user );
+	return $success;
 });
-/*$app->post( '/user/', function() use ( $user, $app ) {
-	$new_member = json_decode( $app->request->getBody(), true );
-	echo $success = $user->createNewUser($new_member, $app);
-	//print_r( $success);
-	if ($success)
-		echo "1";
-	else
-		echo "0";
-	
-});*/
 
 $app->delete( '/user/:id/', function( $id ) use ( $user ) {
 	echo $user->deleteUser( $id );

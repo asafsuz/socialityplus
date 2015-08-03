@@ -22,8 +22,11 @@ class Login {
 			$_SESSION['login'] = true;
 			$this->createSession( $user->fetch_assoc() );
 			return true;
+		}else{
+			
+			return false;
 		}
-		return false;
+		
 	}
 }
 ?>

@@ -1,11 +1,10 @@
 $(document).ready(function(){
 	$("input[type=button]").on( "click", function(){
 		$.ajax({
-			url: "api/user/",
-			type: "GET",
+			url: "api/login/",
+			type: "POST",
 			dataType: "JSON",
 			data: JSON.stringify({
-				/*nickname: $("input[name=username]").val(),*/
 				user_email: $("input[name=email]").val(),
 				user_password: $("input[name=password]").val()	
 			}),

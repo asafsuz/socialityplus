@@ -10,7 +10,7 @@ class User {
 		$this->_db = DB::getInstance();
 	}
 
-public function createNewUser($details) {
+	public function createNewUser($details) {
 		$insertNewUser = $this->_db->query
 		(" INSERT INTO users (user_email, user_password)
 					VALUES('".$details['user_email']."', '".md5($details['user_password'])."')" );
@@ -19,7 +19,7 @@ public function createNewUser($details) {
 			$newUserId = $this->_db->query
 			("SELECT LAST_INSERT_ID()");
 			$newUserId = mysqli_fetch_assoc ($newUserId)['LAST_INSERT_ID()'];
-
+	
 		$insertUserInfo = $this->_db->query
 		(" INSERT INTO users_info (user_id, user_firstname, user_lastname) 
 					VALUES ('$newUserId','".$details['user_firstname']."','".$details['user_lastname']."')");

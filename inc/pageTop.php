@@ -12,7 +12,7 @@
 <header>
 		<div id="pageTopInner">
 			<div class="Logo">
-				<a href=""><img src="imgs/logo.png" alt="Socialityplus Logo" title="Social Network"></a>
+				<a href=""><img src="images/logo.png" alt="Socialityplus Logo" title="Social Network"></a>
 			</div>
 			<div id="search"><input class="field" type="text" placeholder="Search people, hashtags"></div>
 			<nav>
