@@ -2,8 +2,9 @@
     
 	<div id="profile_mainPage">
 		<div id="profile_halfUpper">
-			<div id="coverImage"></div>
+				<div id="coverImage"><img src="imgs/cover.jpg" height="230px" width="980px">
 			<div id="profileImage"></div>
+			</div>
 		</div>
 		<?php 
 		session_start();

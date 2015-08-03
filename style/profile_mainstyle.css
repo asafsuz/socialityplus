@@ -19,12 +19,12 @@ body
 #profileImage
 {
 	width: 105px;
-    height: 105px;
+    height: 125px;
     background: blue;
     border-top-left-radius: 10em;
     border-top-right-radius: 10em;
-    border-bottom-right-radius: 6em;
-    border-bottom-left-radius: 6em;
+    /*border-bottom-right-radius: 6em;
+    border-bottom-left-radius: 6em;*/
     margin-top: -26px;
     margin-left: 20px;
 }
@@ -34,8 +34,8 @@ body
 {
 	width: 980px;
 	height: 40%;
-	background: white;
-	margin: 20px auto;
+	/*background: white;*/
+	margin: 0 auto;
 }
 
 #profile_halfBottom
@@ -81,16 +81,14 @@ body
 	
 }
 
-
-
 #coverImage
 {
 	background-image: url("../imgs/cover.jpg);
-	width: 980px;
+	width: 100%px;
 	height: 170px;
 	margin: 0 auto;
+	border: 1px solid yellow;
 }
-
 
 
 
