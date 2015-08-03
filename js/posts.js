@@ -8,6 +8,7 @@ $(document).ready(function(){
 			data: JSON.stringify({
 				user_id: $("#user_id").val(),
 				post_content: $("#post").val(),
+				
 			}),
 			
 			success: function(response){
@@ -22,5 +23,6 @@ $(document).ready(function(){
 				       $("#commeents").append(div);	
 			}	
 		});			
+		
 	});		
 });

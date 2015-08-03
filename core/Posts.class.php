@@ -8,11 +8,11 @@ class Posts {
 		$this->_db = DB::getInstance();
 	}
 
-	public function createNewPost($details,$post_id,$user_id ) {
+	public function createNewPost($details ) {
 		$result = $this->_db->query(
 			"INSERT INTO posts( user_id, post_content,post_created )
 			VALUES
-			('". $user_id ."','".$details['post_content']. "',NOW())"
+			('".$details['user_id']."','".$details['post_content']. "',NOW())"
 		);
 		
 		return $result;

@@ -61,7 +61,7 @@ $post = new Posts();
 $app->post('/post/', function() use ($post, $app ) {
 	$new_post = json_decode( $app->request->getBody(),true );
 	 $success = $post->createNewPost( $new_post, $app );
-	
+	var_dump($success);
 });
 $app->run();
 ?>
