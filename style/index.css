@@ -1,0 +1,114 @@
+@CHARSET "ISO-8859-1";
+body
+{
+	margin: 0px;
+	font-family: "Tahoma";
+}
+
+#pageMain
+{
+	height: 630px;
+	margin: 0 auto;
+	background-image: url("../images/background.png");
+}
+
+/***********Center of the main body page style***********/
+#mainMiddle
+{
+	width: 980px;
+	height: 625px;
+	margin: 0 auto;
+}
+
+
+/***********Left side in the center of the main page***********/
+#pageMainLeft
+{
+	width: 520px;
+	height: 610px;
+	float: left;
+	color: #ffffff;
+	padding-top: 15px;
+}
+
+h1
+{
+	font-size: 48px;
+}
+.upperLeft>h2
+{
+	margin-top: -30px;
+}
+
+.lowerLeft>h2
+{
+	margin-top: 50px;
+}
+/***********Right side of the main page***********/
+#pageMainRight
+{
+	width: 375px;
+	height: 625px;
+	float: right;
+	color: white;
+}
+
+.userRegist
+{
+	margin-top: 20px;
+}
+
+.userRegist>input
+{
+	width: 330px;
+	height: 40px;
+	border-radius: 5px;
+	margin: 5px;
+	border: 0px;
+	background: black;
+	padding-left: 10px;
+	opacity: 0.3;
+	color: white;
+}
+
+.userRegist>.button
+{
+	width: 100px;
+	height: 40px;
+	background: #58aa17;
+	border-radius: 5px;
+	margin: 5px;
+	border: 0px;
+	color: #ffffff;
+	opacity: 1.0;
+}
+
+.userLogin
+{
+	margin-top: 30px;
+}
+
+.userLogin>input
+{
+	width: 330px;
+	height: 40px;
+	border-radius: 5px;
+	margin: 5px;
+	border: 0px;
+	padding-left: 10px;
+	background: black;
+	opacity: 0.3;
+	color: white;
+}
+
+.userLogin>.button
+{
+	width: 100px;
+	height: 40px;
+	background: #1198b8;
+	border-radius: 5px;
+	margin: 5px;
+	border: 0px;
+	color: #ffffff;
+	opacity: 1.0;
+}

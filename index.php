@@ -6,7 +6,9 @@
 		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script  type="text/javascript" src="js/register.js"></script>
 		<script  type="text/javascript" src="js/login.js"></script>
-		<link rel="stylesheet" href="style/style.css">
+		<link rel="stylesheet" href="style/header.css">
+		<link rel="stylesheet" href="style/index.css">
+		<link rel="stylesheet" href="style/footer.css">
 		<link rel="stylesheet" href="style/register.css">
 	</head>
 <body>
@@ -34,7 +36,7 @@
 				</section>
 				<section class="userLogin">
 					<input type="email" id="loginEmail" name="email" placeholder="Email"><br><span class="emailError"></span>
-					<input type="password" id="loginPass" name="username" placeholder="Password" ><br><span class="passwordError"></span>
+					<input type="password" id="loginPass" name="password" placeholder="Password" ><br><span class="passwordError"></span>
 					<input class="button" type="button" value="LOGIN">
 				</section>
 			</div>
