@@ -16,17 +16,16 @@ class Login {
 	}
 	
 	public function match( $email, $password ) {
-		$user = $this->_db->query( "SELECT user_id, user_email FROM users WHERE user_email = '$email' AND user_password = '" . md5( $password )."'");
-		
+		//$user = $this->_db->query( "SELECT user_id, user_email FROM users WHERE user_email = user_email AND user_password = '".md5('user_password')."'");
+		$user = $this->_db->query( "SELECT user_id, user_email FROM users WHERE user_email = msadan@sapir.ac.il AND user_password = 6dbd0fe19c9a301c4708287780df41a2
+				");
 		if ( $user->num_rows ) {
 			$_SESSION['login'] = true;
 			$this->createSession( $user->fetch_assoc() );
-			return true;
+			header("Location: home.php");
 		}else{
-			
-			return false;
+			echo 'something went wrong';
 		}
-		
 	}
-}
+};
 ?>

@@ -27,7 +27,7 @@
 			<div id="pageMainRight">
 				<section class="userRegist">
 					<h2>Sign up</h2>
-					<input type="text" id="firstname" name="sirstname" placeholder="Firstname" /><br><span class="firstnameError"></span>
+					<input type="text" id="firstname" name="firstname" placeholder="Firstname" /><br><span class="firstnameError"></span>
 					<input type="text" id="lastname" name="lastname" placeholder="Lastname" /><br><span class="lastnameError"></span>
 					<input type="email" id="email" name="email" placeholder="Email" /><br><span class="emailError"></span>
 					<input type="password" id="pass1" name="password" placeholder="Password" /><br><span class="passwordError"></span>

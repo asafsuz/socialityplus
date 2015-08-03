@@ -12,7 +12,7 @@ $(document).ready(function(){
 				user_password: $("input[name=password]").val(),	
 			}),
 			success: function(response){
-				console.log(response.message);			
+				//console.log(response.message);			
 			}	
 		});			
 	});		

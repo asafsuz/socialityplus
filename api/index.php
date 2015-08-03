@@ -21,7 +21,7 @@ $app->get( '/user/:id/', function( $id ) use ( $user ) {
 $app->post( '/user/', function() use ( $user, $app ) {
 	$new_user = json_decode( $app->request->getBody(),true );
 	$success = $user->createNewUser( $new_user );
-	return $success;
+	echo $success;
 });
 
 $app->delete( '/user/:id/', function( $id ) use ( $user ) {
@@ -36,10 +36,10 @@ $app->put( '/user/:id/', function( $id ) use ( $user, $app ) {
 
 $app->post( '/login/', function() use ( $app ) {
 	$login = new Login();
-	$username = $app->request->post('username');
+	$email = $app->request->post('email');
 	$password = $app->request->post('password');
 
-	var_dump( $login->match( $username, $password ) );
+	var_dump( $login->match( $email, $password ) );
 });
 
 $post = new Posts();

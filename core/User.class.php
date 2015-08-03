@@ -12,20 +12,18 @@ class User {
 
 	public function createNewUser($details) {
 		$insertNewUser = $this->_db->query
-		(" INSERT INTO users (user_email, user_password)
-					VALUES('".$details['user_email']."', '".md5($details['user_password'])."')" );
-		
-		if($insertNewUser){
-			$newUserId = $this->_db->query
-			("SELECT LAST_INSERT_ID()");
-			$newUserId = mysqli_fetch_assoc ($newUserId)['LAST_INSERT_ID()'];
-	
-		$insertUserInfo = $this->_db->query
-		(" INSERT INTO users_info (user_id, user_firstname, user_lastname) 
-					VALUES ('$newUserId','".$details['user_firstname']."','".$details['user_lastname']."')");
+			(" INSERT INTO users (user_email, user_password)
+			VALUES('".$details['user_email']."', '".md5($details['user_password'])."')" );
+			if($insertNewUser){
+				$newUserId = $this->_db->query
+				("SELECT LAST_INSERT_ID()");
+				$newUserIds = mysqli_fetch_assoc ($newUserId)['LAST_INSERT_ID()'];
+				$insertUserInfo = $this->_db->query
+				(" INSERT INTO users_info (user_id, user_firstname, user_lastname) 
+				VALUES ('$newUserIds','".$details['user_firstname']."','".$details['user_lastname']."')");
 			return $insertUserInfo;
+			return $insertNewUser;
 		}
-		return $insertNewUser;
 	}
 
 	public function getAllUsers() {
@@ -45,6 +43,12 @@ class User {
 	
 	public function getUserByName( $user_nickname ){
 		$users = $this->_db->query( "SELECT * FROM" . TBL_UINFO . "WHERE username LIKE '%search_term%'" );
+		$details = $users->fetch_assoc();
+		return $details;
+	}
+	
+	public function getUserByMail( $user_email ){
+		$users = $this->_db->query( "SELECT * FROM users WHERE user_email = '".$details['user_email']."'" );
 		$details = $users->fetch_assoc();
 		return $details;
 	}
