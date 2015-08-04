@@ -23,18 +23,17 @@ body
     background: blue;
     border-top-left-radius: 10em;
     border-top-right-radius: 10em;
-    /*border-bottom-right-radius: 6em;
-    border-bottom-left-radius: 6em;*/
-    margin-top: -26px;
+    margin-top: -87px;
     margin-left: 20px;
+    position: absolute;
 }
 
 
 #profile_halfUpper
 {
 	width: 980px;
-	height: 40%;
-	/*background: white;*/
+	height: 270px;
+	background: white;
 	margin: 0 auto;
 }
 
@@ -43,7 +42,7 @@ body
 	width: 980px;
     height: 56%;
     border: 1px solid green;
-    margin: -19px auto;
+    margin: 0px auto;
 }
 #posts-table
 {
@@ -89,25 +88,4 @@ body
 	margin: 0 auto;
 	border: 1px solid yellow;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
