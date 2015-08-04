@@ -46,21 +46,18 @@ body
 }
 #posts-table
 {
-	border: 1px solid black;
     width: 560px;	
     height: 600px;
 }
 #status
 {
 	height: 130px;
-    background-color: #FFFFFF;
     border: 1px solid black;
         
 }
 #status-details
 {
   height: 25px;
-  background-color: #ECE8E8;
 }
 #status > textarea
 	{

@@ -9,18 +9,11 @@ class Posts {
 	}
 
 	public function createNewPost($details ) {
-//a test for the query		
-		$result = $this->_db->query(
-				"INSERT INTO posts( user_id, post_content,post_created )
-			VALUES
-			(202,'This is my new message',NOW())"
-		);
 		
-		/*$result = $this->_db->query(
+		$result = $this->_db->query(
 			"INSERT INTO posts( user_id, post_content,post_created )
 			VALUES
-			('".$details['user_id']."','".$details['post_content']. "',NOW())"
-		);*/
+			(203,'".$details['post_content']. "',NOW())");
 		
 		return $result;
 	}
