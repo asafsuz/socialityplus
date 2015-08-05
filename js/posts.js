@@ -13,14 +13,14 @@ $(document).ready(function(){
 			
 			success: function(response){
 				console.log(response.message);
-				var div="";
+				var div;
 						div+="<div>"
 						div+="<div>"+response.post_content+"</div>"
 						div+="<div id=comment ></div>"//css display none 
 						div+="<input type=text>"
 						div+="<input type=button>" //when click on id comment became display block
 				        div+="</div>"
-				       $("#commeents").append(div);	
+				       $("#commeents").append(div)."style[display:block;]";	
 			}	
 		});			
 		

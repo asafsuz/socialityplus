@@ -77,6 +77,13 @@ body
 	
 }
 
+#commeents
+{
+	background-color: blue;
+	width: 553px;
+	height: 50px;
+	display:none;	
+}
 #coverImage
 {
 	background-image: url("../imgs/cover.jpg);

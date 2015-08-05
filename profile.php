@@ -18,8 +18,9 @@
 					<textarea id="post"  placeholder="What's on your mind?"></textarea>
 					<input type="submit" id="submit" value="POST">
 				</div>
+				<div id="commeents"></div>
 			</div>
-			<div id="commeents"></div>
+			
 		</div>
 			
 			<div id="sideMenu">
