@@ -28,7 +28,6 @@ body
     position: absolute;
 }
 
-
 #profile_halfUpper
 {
 	width: 980px;
@@ -39,17 +38,19 @@ body
 
 #profile_halfBottom
 {
-	width: 980px;
-    height: 56%;
+	width: 940px;
+    min-height: 300px;
     border: 1px solid green;
     margin: 0px auto;
+    padding:20px;
 }
-#posts-table
+.posts-table
 {
-    width: 560px;	
+    width: 660px;	
     height: 600px;
+    float: left;
 }
-#status
+#post
 {
 	height: 130px;
     border: 1px solid black;
@@ -59,13 +60,13 @@ body
 {
   height: 25px;
 }
-#status > textarea
+#post > #post-content
 	{
 	resize: none;
-    width: 553px;
+    width: 652px;
     height: 60px;
 	}
-#status > #submit
+#post > #submit
 {
     float: right;
     background-color: blue;
@@ -79,10 +80,29 @@ body
 
 #commeents
 {
-	background-color: blue;
+	background-color:#f9f9f9;
 	width: 553px;
 	height: 50px;
 	display:none;	
+}
+
+.sideMenu
+{
+	background-color:#f9f9f9;
+	border:1px solid black;
+	width: 220px;
+	height: 235px;
+	float:right;
+	
+	
+}
+
+.sideMenu > div 
+{
+	background-color:#D4D4D4;
+	width:230px;
+	height:6px;
+			
 }
 #coverImage
 {
