@@ -22,7 +22,8 @@ class Login {
 		if ( $user->num_rows ) {
 			$_SESSION['login'] = true;
 			$this->createSession( $user->fetch_assoc() );
-			header("Location: home.php");
+			echo 'There is a session';
+			//header("Location: home.php");
 		}else{
 			echo 'something went wrong';
 		}
