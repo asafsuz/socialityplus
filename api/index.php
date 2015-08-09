@@ -13,7 +13,6 @@ $login = new Login();
 
 function authenticate (){
 	global $app;
-	
 	if (!$_SESSION['login'])
 		$app->halt (401);
 }
@@ -42,15 +41,17 @@ $app->put( '/user/:id/', function( $id ) use ( $user, $app ) {
 	
 });
 
-$app->post( '/login/', function() use ( $login, $app ) {
+$app->post( '/login/', function() use ( $app, $login ) {
 	
 	$email = $app->request->post('user_email');
+	echo $email;
 	$password = $app->request->post('user_password');
-	$success =  $login->preg_match( $email, $password );
-	if ( $success )
+	echo $password;
+	$success =  $login->match( $email, $password );
+	/*if ( $success )
 		echo json_encode (array( "success" => true));
 	else 
-		echo json_encode (array( "success" => false));
+		echo json_encode (array( "success" => false));*/
 });
 
 $post = new Posts();
