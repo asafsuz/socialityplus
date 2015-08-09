@@ -25,6 +25,7 @@ class User {
 			return $insertNewUser;
 		}
 	}
+	
 
 	public function getAllUsers() {
 		$users = $this->_db->query( "SELECT * FROM" . TBL_UINFO );
@@ -34,6 +35,7 @@ class User {
 		return $users;
 	}
 
+	
 	public function getUserById( $id ) {
 		$users = $this->_db->query( "SELECT * FROM" . TBL_UINFO . "WHERE user_id = $id" );
 		$details = $users->fetch_assoc();

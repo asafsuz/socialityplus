@@ -46,7 +46,7 @@ $app->post( '/login/', function() use ( $login, $app ) {
 	
 	$email = $app->request->post('user_email');
 	$password = $app->request->post('user_password');
-	$success =  $login->match( $email, $password );
+	$success =  $login->preg_match( $email, $password );
 	if ( $success )
 		echo json_encode (array( "success" => true));
 	else 
