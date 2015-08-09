@@ -5,10 +5,11 @@ $(document).ready(function(){
 			type: "POST",
 			dataType: "JSON",
 			data: JSON.stringify({
-				user_email: $("input[name=email]").val(),
-				user_password: $("input[name=password]").val()	
+				user_email: $("input[name=logemail]").val(),
+				user_password: $("input[name=logpassword]").val()	
 			}),
 			success: function(response){
+				console.log(response);
 			}	
 		});			
 	});		

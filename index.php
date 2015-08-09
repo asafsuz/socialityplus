@@ -35,8 +35,8 @@
 					<input class="button" type="button" value="REGISTER"><br>
 				</section>
 				<section class="userLogin">
-					<input type="email" id="loginEmail" name="email" placeholder="Email"><br><span class="emailError"></span>
-					<input type="password" id="loginPass" name="password" placeholder="Password" ><br><span class="passwordError"></span>
+					<input type="email" id="loginEmail" name="logemail" placeholder="Email"><br><span class="emailError"></span>
+					<input type="password" id="loginPass" name="logpassword" placeholder="Password" ><br><span class="passwordError"></span>
 					<input class="button" type="button" value="LOGIN">
 				</section>
 			</div>

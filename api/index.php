@@ -9,6 +9,14 @@ require_once dirname( __FILE__ ) . '/../core/User.class.php';
 require_once dirname( __FILE__ ) . '/../core/Login.class.php';
 require_once dirname( __FILE__ ) . '/../core/Posts.class.php';
 $user = new User();
+$login = new Login();
+
+function authenticate (){
+	global $app;
+	
+	if (!$_SESSION['login'])
+		$app->halt (401);
+}
 
 $app->get( '/user/', function() use ( $user ) {
 	echo json_encode( $user->getAllUsers() );
@@ -34,12 +42,15 @@ $app->put( '/user/:id/', function( $id ) use ( $user, $app ) {
 	
 });
 
-$app->post( '/login/', function() use ( $app ) {
-	$login = new Login();
-	$email = $app->request->post('email');
-	$password = $app->request->post('password');
-
-	var_dump( $login->match( $email, $password ) );
+$app->post( '/login/', function() use ( $login, $app ) {
+	
+	$email = $app->request->post('user_email');
+	$password = $app->request->post('user_password');
+	$success =  $login->match( $email, $password );
+	if ( $success )
+		echo json_encode (array( "success" => true));
+	else 
+		echo json_encode (array( "success" => false));
 });
 
 $post = new Posts();

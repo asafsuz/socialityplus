@@ -51,7 +51,7 @@ $(document).ready(function(){
 	$('#email').blur(function() {
 		var error = $('emailError').text
 		if(!$(this).val()) {
-			$('.emailError').text('You must type your email addres!')
+			$('.emailError').text('You must type your email address!')
 		}else if (!validateEmail($("#email").val())) {
 			$('.emailError').text('Not a valid address! Please type again.')
 		}else{
