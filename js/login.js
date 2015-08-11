@@ -4,13 +4,15 @@ $(document).ready(function(){
 			url: "api/login/",
 			type: "POST",
 			dataType: "JSON",
-			data: JSON.stringify({
+			data: {
+				data:{
 				user_email: $("input[name=logemail]").val(),
 				user_password: $("input[name=logpassword]").val()	
-			}),
+			},
 			success: function(response){
-				console.log(response);
+				console.log(response.mesg);
 			}	
-		});			
+		}	
 	});		
+	})
 });

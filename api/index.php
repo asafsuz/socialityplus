@@ -11,11 +11,20 @@ require_once dirname( __FILE__ ) . '/../core/Posts.class.php';
 $user = new User();
 $login = new Login();
 
-function authenticate (){
-	global $app;
-	if (!$_SESSION['login'])
+function authenticate() {
+	
+	if (!$_SESSION['login']) {
+		global $login;
+		echo json_encode (array ( "error" => "no session"));
+		//echo "no session";
 		$app->halt (401);
+	}
 }
+
+$app->get( '/', function(){
+	global $app;
+	$app->halt(401);
+});
 
 $app->get( '/user/', function() use ( $user ) {
 	echo json_encode( $user->getAllUsers() );
@@ -42,16 +51,14 @@ $app->put( '/user/:id/', function( $id ) use ( $user, $app ) {
 });
 
 $app->post( '/login/', function() use ( $app, $login ) {
-	
-	$email = $app->request->post('user_email');
-	echo $email;
-	$password = $app->request->post('user_password');
-	echo $password;
-	$success =  $login->match( $email, $password );
-	/*if ( $success )
+	$email = $app->request->post('logname');
+	$password = $app->request->post('logpassword');
+	if ($login->match()){
 		echo json_encode (array( "success" => true));
-	else 
-		echo json_encode (array( "success" => false));*/
+		define( 'USER_ID', $_SESSION['user_id']);
+	} else {
+		echo json_encode (array( "success" => false));
+	}
 });
 
 $post = new Posts();
