@@ -11,12 +11,12 @@ require_once dirname( __FILE__ ) . '/../core/Posts.class.php';
 $user = new User();
 $login = new Login();
 
+//function to verify if a session was created. If not the user is not aloud to enter home.php
 function authenticate() {
 	
 	if (!$_SESSION['login']) {
 		global $login;
 		echo json_encode (array ( "error" => "no session"));
-		//echo "no session";
 		$app->halt (401);
 	}
 }
@@ -51,14 +51,13 @@ $app->put( '/user/:id/', function( $id ) use ( $user, $app ) {
 });
 
 $app->post( '/login/', function() use ( $app, $login ) {
-	$email = $app->request->post('logname');
-	$password = $app->request->post('logpassword');
-	if ($login->match()){
+	 $email = $app->request->post('email');
+	 $password = $app->request->post('password');
+	 $success = $login->match( $email, $password );
+	if ( $success )
 		echo json_encode (array( "success" => true));
-		define( 'USER_ID', $_SESSION['user_id']);
-	} else {
+	else
 		echo json_encode (array( "success" => false));
-	}
 });
 
 $post = new Posts();

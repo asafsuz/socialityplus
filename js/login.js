@@ -1,18 +1,17 @@
+//ajax that send data to server from input in index.php
 $(document).ready(function(){
-	$("input[type=button]").on( "click", function(){
+	$("input[type=button].logbutton").on( "click" ,function(){
 		$.ajax({
 			url: "api/login/",
 			type: "POST",
 			dataType: "JSON",
 			data: {
-				data:{
-				user_email: $("input[name=logemail]").val(),
-				user_password: $("input[name=logpassword]").val()	
+				email: $("input[name=logemail]").val(),
+				password: $("input[name=logpassword]").val()	
 			},
 			success: function(response){
-				console.log(response.mesg);
-			}	
-		}	
-	});		
-	})
+				console.log(response);
+			}
+		});
+	});
 });

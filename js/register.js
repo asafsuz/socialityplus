@@ -1,6 +1,6 @@
 //This ajax send the data of the new user through the rest to User.class
 $(document).ready(function(){
-	$("input[type=button]").on( "click", function(){
+	$(".userRegist").on( "click", "input[type=button].button",function(){
 		$.ajax({
 			url: "api/user/",
 			type: "POST",
@@ -12,7 +12,7 @@ $(document).ready(function(){
 				user_password: $("input[name=password]").val(),	
 			}),
 			success: function(response){
-				//console.log(response.message);			
+				//console.log(success);			
 			}	
 		});			
 	});		
