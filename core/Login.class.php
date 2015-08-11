@@ -21,12 +21,13 @@ class Login {
 	
 			if ( $user->num_rows ) {
 				$_SESSION['login'] = true;
-				$this->createSession( $user->fetch_assoc() );
-				echo 'A session was created';
-				//header("Location: home.php");
-			}else{
-				echo 'no seesion was created';
-			}
+				$success = $this->createSession( $user->fetch_assoc() );
+				if ($success)
+					echo 'session was created';
+				else 
+					echo "session was not created";
+			
 	}
+}
 };
 ?>
