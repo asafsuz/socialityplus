@@ -18,28 +18,9 @@
 				</div>
 				<div id="commeents"></div>
 			</section>
-				
-		<section class="sideMenu">
-			 <div id="about">
-				 <div>
-				    
-				</div>
-				 <div>
-			    
-				</div>
-				 <div>
-				    
-				</div>
-				 <div>
-				    
-				</div>
-			 </div >
-			 
-		     <div>
-			    
-			</div>
-		</section>
-	</div>
+		</div>
+		
+	
 <?php include_once("inc/template_pageBottom.php");?>
 </body>
 </html>
