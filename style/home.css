@@ -1,0 +1,96 @@
+@CHARSET "ISO-8859-1";
+body
+{
+	margin: 0px;
+	font-family: "Tahoma";
+	font-size: 12px;
+	background: #D8D8D8;
+}
+#container
+{
+	width: 980px;
+	margin: 0 auto;
+}
+#owner-post
+{
+	width: 70%;
+	height: 150px;
+	background: #F0F0F0;
+	margin-top: 20px;
+	border: 1px solid silver;
+	float: left;
+}
+.owner-details
+{
+	height: 30px;
+	background: #F0F0F0;
+	padding:10px 0 0 10px;
+}
+.post-content
+{
+	width:100%;
+	height: 70px;
+}
+.text-content
+{
+	height: 60px;
+}
+
+.post-content textarea
+{
+	width: 98%;
+	resize: none;
+	padding-left: 10px;
+	border: none;
+	
+}
+.owner-send
+{
+	width: 50px;
+	float: right;
+	background: #445d9d;
+	margin: 5px;
+	text-align: center;
+	color: white;
+	border: none;
+}
+
+#side-boxes
+{
+	height: 500px;
+	float: right;
+	width: 27%;
+	margin-top: 20px;
+}
+.box-title
+{
+	background: #F0F0F0;
+	height: 30px;
+	font-weight: bold;
+	padding: 8px 0 0 5px;
+}
+.welcome
+{
+	width: 100%;
+	height: 108px;
+	border: 1px solid silver;
+	background: white;
+}
+
+.details
+{
+	width: 100%;
+	height: 108px;
+	border: 1px solid silver;
+	margin-top: 10px;
+	background: white;
+}
+
+.myfriends
+{
+	width: 100%;
+	height: 108px;
+	border: 1px solid silver;
+	background: white;
+	margin-top: 10px;
+}

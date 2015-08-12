@@ -9,6 +9,6 @@ footer
 {
 	width: 980px;
 	height: 45px;
-	border-top: 1px solid silver;
-	margin: 10px auto;
+	margin: 15px auto;
+	border: 1px solid silver;
 }
