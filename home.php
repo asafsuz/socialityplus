@@ -30,6 +30,12 @@
 				</div>
 			</aside>
 		</div>
+=======
+		</div>
+		
+	
+<?php include_once("inc/template_pageBottom.php");?>
+>>>>>>> origin/master
 </body>
 </html>
 

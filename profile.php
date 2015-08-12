@@ -21,20 +21,35 @@
 				<div id="commeents"></div>
 			</div>
 				
-		<div id="sideMenu">
+		<section class="sideMenu">
 			 <div id="about">
-			 <ul>
-			 <li><H4>About</H4></li>
-			 <li></li>
-			 <li></li>
-			 <li></li>
-			 <li></li>
-			 </ul>
-			 </div >
 			 
-		     <div>
-			    
+				 <div>
+			<p> About:</p>
+					</div>
+				
+				 <div>
+			<p>  Location: </p>
+					</div>
+				
+				 <div>
+			<p> Born:  </p>  
+					</div>
+				
+				 <div>
+			<p>  Gender: </p>  
+					</div>
+			
+			     <div>
+			<p>   Homepage:  </p>  
+					</div>
+				<div>
+			<p>  Facebook: </p>   
+					</div>
+				<div>
+			<p> Bio:	</p>
+					</div>	
 			</div>
-		</div>
-	</div>
+		</section>
+	</div>	
 <?php include_once("inc/template_pageBottom.php");?>

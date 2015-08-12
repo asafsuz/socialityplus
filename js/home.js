@@ -7,7 +7,7 @@ function init(id){
 		
 	});
 
-	$("#postButton").click(function(){
+	$("input[type=submit]").on("click",function(){
 		alert("fgbh");
 		createNewPost();
 	});
