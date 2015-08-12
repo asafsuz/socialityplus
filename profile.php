@@ -25,29 +25,29 @@
 			 <div id="about">
 			 
 				 <div>
-			 &nbsp About:
+			<p> About:</p>
 					</div>
 				
 				 <div>
-			 &nbsp  Location: 
+			<p>  Location: </p>
 					</div>
 				
 				 <div>
-			  &nbsp Born:    
+			<p> Born:  </p>  
 					</div>
 				
 				 <div>
-			 &nbsp  Gender:   
+			<p>  Gender: </p>  
 					</div>
 			
 			     <div>
-			&nbsp   Homepage:    
+			<p>   Homepage:  </p>  
 					</div>
 				<div>
-			&nbsp   Facebook:    
+			<p>  Facebook: </p>   
 					</div>
 				<div>
-			&nbsp Bio:	
+			<p> Bio:	</p>
 					</div>	
 			</div>
 		</section>
