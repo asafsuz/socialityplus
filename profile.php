@@ -21,7 +21,7 @@
 				<div id="commeents"></div>
 			</div>
 				
-		<section class="sideMenu">
+		<aside> class="sideMenu">
 			 <div id="about">
 			 
 				 <div>
@@ -50,6 +50,6 @@
 			<p> Bio:	</p>
 					</div>	
 			</div>
-		</section>
+	   </aside>
 	</div>	
 <?php include_once("inc/template_pageBottom.php");?>

@@ -9,13 +9,12 @@ require_once dirname( __FILE__ ) . '/../core/User.class.php';
 require_once dirname( __FILE__ ) . '/../core/Login.class.php';
 require_once dirname( __FILE__ ) . '/../core/Posts.class.php';
 $user = new User();
-$login = new Login();
 
 //function to verify if a session was created. If not the user is not aloud to enter home.php
 function authenticate() {
 	
 	if (!$_SESSION['login']) {
-		global $login;
+		
 		echo json_encode (array ( "error" => "no session"));
 		$app->halt (401);
 	}
@@ -50,14 +49,24 @@ $app->put( '/user/:id/', function( $id ) use ( $user, $app ) {
 	
 });
 
-$app->post( '/login/', function() use ( $app, $login ) {
-	 $email = $app->request->post('email');
-	 $password = $app->request->post('password');
-	 $success = $login->match( $email, $password );
-	if ( $success )
-		echo json_encode (array( "success" => true));
+$app->post( '/login/', function() use ( $app ) {
+	$login = new Login();
+
+	$email = $app->request->post('email');
+	$password = $app->request->post('password');
+
+	if ( $login->match( $email, $password ) )
+		echo json_encode( array( "success" => "true" ) );
 	else
-		echo json_encode (array( "success" => false));
+		echo json_encode( array( "success" => "false" ) );
+});
+
+
+$app->get( '/login/', function() use ( $app ) {
+	if ( $_SESSION['login'] )
+		echo 1;
+	else
+		echo 0;
 });
 
 $post = new Posts();
