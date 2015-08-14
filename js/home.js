@@ -1,27 +1,22 @@
 function init(id){
-	
 	$.getJSON("api/user/" + id + "/",  function( jsonResponse ){
 		console.log(jsonResponse);
-		
 		setAllData(jsonResponse);
-		
 	});
-
-	$("input[type=submit]").on("click",function(){
+	$("input[type=button]").on("click",function(){
 		alert("fgbh");
 		createNewPost();
 	});
 }
-
 function createNewPost(){
 	var user_id = this.data("id");
-	var postText = $("#textarea_" + user_id).val();
+	var postText = $(".text-content_" + user_id).val();
 		$.ajax({
 			url: "api/posts/",
 			type: "POST",
 			dataType: "JSON",
 			data: JSON.stringify ({
-				post_content: postText.find("textarea").val(),
+				post_content: postText.find("text-content").val(),
 			}),
 			success: function( response ) {
 				console.log(response.success);

@@ -50,7 +50,7 @@ $app->put( '/user/:id/', function( $id ) use ( $user, $app ) {
 	
 });
 
-$app->post( '/login/', function() use ( $app, $login ) {
+$app->post( '/login/', function() use ( $app ) {
 	 $email = $app->request->post('email');
 	 $password = $app->request->post('password');
 	 $success = $login->match( $email, $password );
@@ -60,10 +60,9 @@ $app->post( '/login/', function() use ( $app, $login ) {
 		echo json_encode (array( "success" => false));
 });
 
-$post = new Posts();
-$app->post('/post/', function() use ($post, $app ) {
+$app->post('/post/', function() use ($memberpost, $app ) {
 	$new_post = json_decode( $app->request->getBody(),true );
-	 $success = $post->createNewPost( $new_post, $app );
+	$success = $post->createNewPost( $memberpost );
 	var_dump($success);
 });
 $app->run();

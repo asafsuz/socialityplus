@@ -1,5 +1,6 @@
 $(document).ready(function(){
-	$("input[type=submit]").on( "click", function(){
+	var $text-content = $(''.text-content');
+	$((".owner-send").on( "click", function(){
 		alert('helloooo');
 		$.ajax({
 			url: "api/post/",
@@ -13,14 +14,14 @@ $(document).ready(function(){
 			
 			success: function(response){
 				console.log(response.message);
-				var div;
-						div+="<div>"
-						div+="<div>"+response.post_content+"</div>"
-						div+="<div id=comment ></div>"//css display none 
+				/*var section;
+						div+="<section>"
+						div+="<section>"+response.post_content+"</div>"
+						div+="<section id=comment ></section>"//css display none 
 						div+="<input type=text>"
 						div+="<input type=button>" //when click on id comment became display block
 				        div+="</div>"
-				       $("#commeents").append(div)."style[display:block;]";	
+				       $.(#comments).append(section)."style[display:block;]";*/	
 			}	
 		});			
 		

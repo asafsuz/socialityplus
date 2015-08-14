@@ -53,6 +53,7 @@ body
 	text-align: center;
 	color: white;
 	border: none;
+	cursor: pointer;
 }
 
 #side-boxes
@@ -93,4 +94,8 @@ body
 	border: 1px solid silver;
 	background: white;
 	margin-top: 10px;
+}
+.footer
+{
+	clear: both;
 }
