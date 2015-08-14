@@ -32,7 +32,11 @@
 			</aside>
 			
 		</div>
+
 		<p class="footer"><?php include_once("inc/template_pageBottom.php");?></p>
+
+
+		
 </body>
 </html>
 
