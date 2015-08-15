@@ -13,8 +13,5 @@ $(document).ready(function(){
 				console.log(response);
 			}
 		});
-		error: function() {
-			alert ('there was an error loading post');
-		}
 	});
 });
