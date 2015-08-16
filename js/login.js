@@ -11,10 +11,9 @@ $(document).ready(function(){
 			},
 			success: function(response){
 				console.log(response);
+				$("input[name=logemail]").val('');
+				$("input[name=logpassword]").val('');
 			}
 		});
-		error: function() {
-			alert ('there was an error loading post');
-		}
 	});
 });

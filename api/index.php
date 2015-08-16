@@ -9,6 +9,8 @@ require_once dirname( __FILE__ ) . '/../core/User.class.php';
 require_once dirname( __FILE__ ) . '/../core/Login.class.php';
 require_once dirname( __FILE__ ) . '/../core/Posts.class.php';
 $user = new User();
+$post = new Posts();
+
 
 //function to verify if a session was created. If not the user is not aloud to enter home.php
 function authenticate() {
@@ -50,37 +52,34 @@ $app->put( '/user/:id/', function( $id ) use ( $user, $app ) {
 });
 
 $app->post( '/login/', function() use ( $app ) {
-<<<<<<< HEAD
-	 $email = $app->request->post('email');
-	 $password = $app->request->post('password');
-	 $success = $login->match( $email, $password );
-	if ( $success )
-		echo json_encode (array( "success" => true));
-=======
 	$login = new Login();
-
 	$email = $app->request->post('email');
 	$password = $app->request->post('password');
-
-	if ( $login->match( $email, $password ) )
+	if ( $login->match( $email, $password ) ){
 		echo json_encode( array( "success" => "true" ) );
-	else
+	}else{
 		echo json_encode( array( "success" => "false" ) );
+	}
 });
-
 
 $app->get( '/login/', function() use ( $app ) {
 	if ( $_SESSION['login'] )
 		echo 1;
->>>>>>> origin/master
 	else
 		echo 0;
 });
 
-$app->post('/post/', function() use ($memberpost, $app ) {
+$app->post('/send/', function() use ( $post, $app ) {
 	$new_post = json_decode( $app->request->getBody(),true );
-	$success = $post->createNewPost( $memberpost );
-	var_dump($success);
+	$success = $post->createNewPost( $new_post );
+	return $success;
 });
+
+$app->get('/send/', function() use ($id){
+	$last_post = json_encode( $post->getLastPost($post_id) );
+	return $last_post;
+});
+
+
 $app->run();
 ?>
