@@ -9,7 +9,7 @@ require_once dirname( __FILE__ ) . '/../core/User.class.php';
 require_once dirname( __FILE__ ) . '/../core/Login.class.php';
 require_once dirname( __FILE__ ) . '/../core/Posts.class.php';
 $user = new User();
-$post = new Posts();
+
 
 
 //function to verify if a session was created. If not the user is not aloud to enter home.php
@@ -68,14 +68,14 @@ $app->get( '/login/', function() use ( $app ) {
 	else
 		echo 0;
 });
-
+$post = new Posts();
 $app->post('/send/', function() use ( $post, $app ) {
 	$new_post = json_decode( $app->request->getBody(),true );
 	$success = $post->createNewPost( $new_post );
 	return $success;
 });
 
-$app->get('/send/', function() use ($id){
+$app->get('/send/:id', function() use ($id){
 	$last_post = json_encode( $post->getLastPost($post_id) );
 	return $last_post;
 });

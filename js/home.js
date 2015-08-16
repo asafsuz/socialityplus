@@ -18,22 +18,25 @@ $(document).ready(function(){
 			
 		}
 		
-		/*	
-		 * $("#display-post").append( );
-		 * $.ajax({
-				url: "api/send/",
+		
+		 $("#display-post").append( );
+		  $.ajax({
+				url: "api/send/:id",
 				type: "GET",
 				dataType: "JSON",
-				success: function( display ){
+				success: function( posts ){
 					var div = "";
-					$.each( post, function( key, post ) {
-						div += '<div class="display-post" style="border-bottom: 2px solid black; padding: 5px;">';
+					$.each( posts, function(key, post  ) {
+						div += '<div class="display-post" style="border-bottom: 2px solid black; padding: 5px;" id="postId_'+ id +'">';
 						div += '<p>' + post.post_content + '</p>';
 						div += '</div>';
 					}),
-					//$("#display-post").append( div );
+					$("#display-post").append( div );
+				},
+		         error:function(){
+					alert('Error loading post' );
 				}
-			})*/
+			})
 		})
 		
 });
