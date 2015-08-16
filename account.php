@@ -35,10 +35,20 @@
 						<tr><td><input type="text" name="location"><br>Where do you live?</td></tr>
 						<tr><td><input type="text" name="website"><br>If you have a blog, personal page, enter it.</td></tr>
 						<tr><td><textarea rows="4" cols="50"></textarea><br>About me (160 characters or less)</td></tr>
+						<tr><td><input type="button" value="Save Changes" class="button"></td></tr>
 						</table>
 					</div>
+	
+					
 				</section>
-				<aside id="settings"></aside>
+				
+				<aside id="settings">
+					<div class="set">Settings</div>
+					<div class="set">General</div>
+					<div class="set">Profile Picture</div>
+					<div class="set">Password</div>
+				</aside>
+				
 			</div>
 			
 			<p class="footer"><?php include_once("inc/template_pageBottom.php");?></p>
