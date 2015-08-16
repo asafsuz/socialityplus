@@ -1,0 +1,60 @@
+@CHARSET "utf-8";
+body
+{
+	margin: 0px;
+	font-family: "Tahoma";
+	font-size: 12px;
+	background: #D8D8D8;
+}
+#container
+{
+	width: 980px;
+	height: 550px;
+	margin: 0 auto;
+	border: 1px solid yellow;
+}
+
+#member-account
+{
+	width: 70%;
+	height: 500px;
+	background: white;
+	margin-top: 20px;
+	border: 1px solid silver;
+	float: left;
+}
+
+#settings
+{
+	height: 500px;
+	float: right;
+	width: 27%;
+	margin-top: 20px;
+	border: 1px solid silver;
+}
+
+.title
+{
+	width: 680px;
+	height: 30px;
+	background: #F0F0F0;
+	padding: 5px 0 0 5px;
+}
+
+.page-title
+{
+	height: 30px;
+	font-size: large;
+	margin-left: 10px;
+	padding-top: 10px;
+	border-bottom: 1px solid #F0F0F0;
+}
+img
+{
+	margin-right: 10px;
+}
+
+.footer
+{
+	clear: both;
+}
