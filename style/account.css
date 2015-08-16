@@ -17,7 +17,7 @@ body
 #member-account
 {
 	width: 70%;
-	height: 500px;
+	height: 780px;
 	background: white;
 	margin-top: 20px;
 	border: 1px solid silver;
@@ -52,6 +52,39 @@ body
 img
 {
 	margin-right: 10px;
+}
+
+#acc-profile-names
+{
+	width: 150px;
+	height: 350px;
+	text-align: right;
+	float: left;	
+}
+
+#names
+{
+	tex-align: right;
+	width: 150px;
+}
+
+#names tr
+{
+	height: 70px;
+}
+
+#fields tr
+{
+	height: 70px;
+	font-size: 80%;
+}
+
+#acc-profile-fields
+{
+	width: 500px;
+	height: 350px;
+	float: left;
+	margin-left: 20px;
 }
 
 .footer
