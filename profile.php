@@ -6,6 +6,7 @@
 			<div id="profileImage"></div>
 			</div>
 		</div>
+		/* hello mauricio how are you today */
 		<?php 
 		session_start();
 		?>
