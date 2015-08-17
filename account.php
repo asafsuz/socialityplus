@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<title>Social Network - Account page</title>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-		<script  type="text/javascript" src="js/account.js"></script>
+		<script  type="text/javascript" src="js/update_acc.js"></script>
 		<link rel="stylesheet" href="style/account.css">
 	</head>
 	<body>
@@ -30,7 +30,7 @@
 						<tr><td><input type="text" name="fname"><br>Enter your first name</td></tr>
 						<tr><td><input type="text" name="lname"><br>Enter your last name</td></tr>
 						<tr><td><input type="email" name="email"><br>E-mail will not be displayed</td></tr>
-						<tr><td><input type="date" name="bday"><br>Select the date you were born</td></tr>
+						<tr><td><input type="date" name="bdate"><br>Select the date you were born</td></tr>
 						<tr><td><select name="gender"><option value="male">Male</option><option value="female">Female</option></select><br>Select your gender (male or female)</td></tr>
 						<tr><td><input type="text" name="location"><br>Where do you live?</td></tr>
 						<tr><td><input type="text" name="website"><br>If you have a blog, personal page, enter it.</td></tr>
