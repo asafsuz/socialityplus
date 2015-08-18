@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require 'Slim/Slim.php';
 \Slim\Slim::registerAutoloader();
 $app = new \Slim\Slim();
@@ -55,14 +55,13 @@ $app->post( '/login/', function() use ( $app ) {
 	$email = $app->request->post('email');
 	$password = $app->request->post('password');
 	if ( $login->match( $email, $password ) ){
-		echo json_encode( array( "success" => "true" ) );
+		echo json_encode( $_SESSION );
 	}else{
-		echo json_encode( array( "success" => "false" ) );
+		echo json_encode( $_SESSION );
 	}
 });
 
-$app->get( '/login', function() use ( $app ) {
-	
+$app->get( '/login/', function() use ( $app ) {
 	if ( $_SESSION['login'] )
 		echo 1;
 	else

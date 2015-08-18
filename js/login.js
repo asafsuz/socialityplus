@@ -10,9 +10,17 @@ $(document).ready(function(){
 				password: $("input[name=logpassword]").val()	
 			},
 			success: function(response){
-				console.log(response);
-				$("input[name=logemail]").val('');
-				$("input[name=logpassword]").val('');
+				
+				//if( parseInt( response.success)){
+				if( response.login ){					
+					window.location.href= 'home.php';
+					$("input[name=logemail]").val('');
+					$("input[name=logpassword]").val('');
+					
+				}else{
+					alert("Invalid login");
+				}
+				
 			}
 		});
 	});

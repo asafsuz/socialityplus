@@ -18,11 +18,11 @@ class Login {
 	public function match($email, $password) {
            $query = $this->_db->query("SELECT * FROM users
 	    	WHERE user_email = '$email'  AND user_password = '".md5($password)."'");
-           
+       
      	if($query->num_rows){
-     	$_SESSION['login']=true;
-     	$this->createSession($query->fetch_assoc());
-		return true;
+     		$some = $this->createSession($query->fetch_assoc());
+     		$_SESSION['login']=true;
+			return true;
 		{
 			return false;
 		}	
