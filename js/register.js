@@ -12,9 +12,15 @@ $(document).ready(function(){
 				user_password: $("input[name=password]").val(),	
 			}),
 			success: function(response){
-				//console.log(success);			
+				//console.log(success);
+				
 			}	
-		});			
+		});
+		$("input[name=firstname]").val('');
+		$("input[name=lastname]").val('');
+		$("input[name=email]").val('');
+		$("input[name=password]").val('');
+		$("input[name=repassword]").val('');
 	});		
 //Function that determinates the regular expression to verify the validity of the email address in the registration form
 	function validateEmail(email){

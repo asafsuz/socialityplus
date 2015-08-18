@@ -14,9 +14,7 @@ $user = new User();
 
 //function to verify if a session was created. If not the user is not aloud to enter home.php
 function authenticate() {
-	
 	if (!$_SESSION['login']) {
-		
 		echo json_encode (array ( "error" => "no session"));
 		$app->halt (401);
 	}
@@ -62,21 +60,24 @@ $app->post( '/login/', function() use ( $app ) {
 	}
 });
 
-$app->get( '/login/', function() use ( $app ) {
+$app->get( '/login', function() use ( $app ) {
+	
 	if ( $_SESSION['login'] )
 		echo 1;
 	else
 		echo 0;
 });
-$post = new Posts();
-$app->post('/send/', function() use ( $post, $app ) {
+
+$app->post('/send/', function() use ( $app ) {
+	$post = new Posts();
 	$new_post = json_decode( $app->request->getBody(),true );
 	$success = $post->createNewPost( $new_post );
 	return $success;
 });
 
-$app->get('/send/:id', function() use ($id){
-	$last_post = json_encode( $post->getLastPost($post_id) );
+$app->get('/send/:id', function() use ($user){
+	$post = new Posts();
+	$last_post = json_encode( $post->getLastPost($user_id) );
 	return $last_post;
 });
 

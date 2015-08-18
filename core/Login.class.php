@@ -19,14 +19,16 @@ class Login {
            $query = $this->_db->query("SELECT * FROM users
 	    	WHERE user_email = '$email'  AND user_password = '".md5($password)."'");
            
-	        $numrows = mysqli_num_rows($query);
-     	if($numrows )
+     	if($query->num_rows){
+     	$_SESSION['login']=true;
+     	$this->createSession($query->fetch_assoc());
 		return true;
 		{
 			return false;
 		}	
 	}
 	
-};
+}
+}
 
 ?>

@@ -44,9 +44,9 @@
 				
 				<aside id="settings">
 					<div class="set">Settings</div>
-					<div class="set">General</div>
-					<div class="set">Profile Picture</div>
-					<div class="set">Password</div>
+					<div class="set"><input type="button" value="General" id="set-general"></div>
+					<div class="set"><input type="button" value="Profile Picture" id="set-profpic"></div>
+					<div class="set"><input type="button" value="Password" id="set-password"></div>
 				</aside>
 				
 			</div>

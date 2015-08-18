@@ -99,6 +99,11 @@ img
 {
 	background: #F0F0F0;
 }
+#
+{
+	border: 0;
+	background-color: none;
+}
 
 .footer
 {
