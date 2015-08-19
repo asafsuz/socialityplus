@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	$("input[type=submit]").on( "click", function(){
+		alert('yohoo');
 		var newpost = $('textarea.text-content').val();
 		if ($.trim(newpost) != "") {
 			$.ajax({
@@ -7,28 +8,29 @@ $(document).ready(function(){
 				type: "POST",
 				dataType: "JSON",
 				data: JSON.stringify({
-					//user_id: $("#user_id").val(),
-					new_post: $(".text-content").val(),
+					
+				 new_post: $(".text-content").val(),
+				 clear_status: $(".text-content").val('')
 				}),
 				success: function(response){
 					console.log(success);
 				} 
-			})
-			$("textarea.text-content").val('');
+			})	
+		   
 			
-		}
-		
-		
+		};
+	});	
 		 $("#display-post").append( );
 		  $.ajax({
 				url: "api/send/:id",
 				type: "GET",
 				dataType: "JSON",
 				success: function( posts ){
+			  	var posts = $.parseJSON(posts.responseText);
 					var div = "";
 					$.each( posts, function(key, post  ) {
-						div += '<div class="display-post" style="border-bottom: 2px solid black; padding: 5px;" id="postId_'+ id +'">';
-						div += '<p>' + post.post_content + '</p>';
+						div += '<div class="display-post" style="border-bottom: 2px solid black; padding: 5px;" data_id="'+post.post_id +'">';
+						div += '<p>' + content + '</p>';
 						div += '</div>';
 					}),
 					$("#display-post").append( div );
@@ -37,16 +39,14 @@ $(document).ready(function(){
 					alert('Error loading post' );
 				}
 			})
-		})
 		
 });
-/*	
+	
 			
-		}
 		
 		
-		$('textarea.text-content').val('')
-		/*var div;
+	/*	('textarea.text-content').val('')
+		var div;
 					div+="<div>",
 					div+="<div>"+ response.post_content + "</div>",
 					div+="<div id=new_post ></div>",//css display none 

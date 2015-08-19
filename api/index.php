@@ -75,10 +75,10 @@ $app->post('/send/', function() use ( $app ) {
 	return $success;
 });
 
-$app->get('/send/:id', function() use ($user){
 	$post = new Posts();
-	$last_post = json_encode( $post->getLastPost($user_id) );
-	return $last_post;
+	$app->get( '/send/:id/', function( $id ) use ( $post ) {	
+	echo json_encode( $post->getLastPost( $id ) );
+
 });
 
 

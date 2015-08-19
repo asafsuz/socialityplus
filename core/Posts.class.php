@@ -14,10 +14,13 @@ class Posts {
 		return $result;
 	}
 
-	public function getLastPost($post_id) {
+	public function getLastPost() {
 		$result = $this->_db->query("SELECT * FROM posts ORDER BY post_id  DESC limit 1");
-		while($row = $result->fetch_assoc($result));
-		return $row;
+		$getLastPosts = array();
+		while($row = $result->fetch_assoc());
+		$getLastPosts[] = $row;
+		
+		return $getLastPosts;
 
 	}
 
