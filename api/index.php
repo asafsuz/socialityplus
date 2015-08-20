@@ -30,8 +30,10 @@ $app->get( '/user/', function() use ( $user ) {
 	echo json_encode( $user->getAllUsers() );
 });
 
-$app->get( '/user/:id/', function( $id ) use ( $user ) {
-	echo json_encode( $user->getUserById( $id ) );
+$app->get( '/user-id/', function() use ($app, $users ) {
+	$obUser = $users->getUserById($_SESSION['user_id']);
+	$user = json_encode($obUser['0']) ;
+	echo $user;
 });
 
 $app->post( '/user/', function() use ( $user, $app ) {

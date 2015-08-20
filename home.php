@@ -11,7 +11,7 @@
 	<?php include_once("inc/pageTop.php");?>
 			<div id="container">
 				<section id="owner-post">
-					<div class="owner-details"><img src="imgs/anonymous.jpg" width="20px" height="20px" > Asaf, Update your status</div>
+					<div class="owner-details"><div id="post-pic" width="20px" height="20px" ><div id="post-user-name">  , Update your status</div>
 					<div class="post-content"><textarea class="text-content" placeholder="What's on your mind?"></textarea></div>
 					<input type="submit" class="owner-send" value="Post">
 					<div id="display_post"></div>
