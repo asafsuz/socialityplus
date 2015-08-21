@@ -1,5 +1,4 @@
 <?php
-
 require 'Slim/Slim.php';
 \Slim\Slim::registerAutoloader();
 $app = new \Slim\Slim();
@@ -30,10 +29,11 @@ $app->get( '/user/', function() use ( $user ) {
 	echo json_encode( $user->getAllUsers() );
 });
 
-$app->get( '/user-id/', function() use ($app, $users ) {
-	$obUser = $users->getUserById($_SESSION['user_id']);
-	$user = json_encode($obUser['0']) ;
-	echo $user;
+
+$app->get( '/user-id/', function() use ($app, $user ) {
+	$obUser = $user->getUserById($_SESSION['user_id']);
+	$users = json_encode($obUser['0']) ;
+	var_dump($users) ;
 });
 
 $app->post( '/user/', function() use ( $user, $app ) {

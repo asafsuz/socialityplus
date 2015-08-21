@@ -16,7 +16,7 @@ $(document).ready(function(){
 		type: "GET",
 		dataType: "JSON",
 		success: function( posts ){
-	  	var details = $.parseJSON(posts.responseText);
+	  	var details = $.json_decode(posts.responseText);
 	  	
 	  		userFirstName = details.user_firstname;
 			userLastName =details.user_lastname;
@@ -35,14 +35,6 @@ $(document).ready(function(){
 			$(".box-details").append(profilName,userBirtDay,userEmail);
 			}
 		});
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	//this ajax comand send the content of the text area to DB 
 	$("input[type=submit]").on( "click", function(){

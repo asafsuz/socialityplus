@@ -7,6 +7,7 @@
 		<script  type="text/javascript" src="js/home.js"></script>
 		<link rel="stylesheet" href="style/topstyle.css">
 		<link rel="stylesheet" href="style/profile_mainstyle.css">
+		<link rel="stylesheet" href="style/home.css">
 	</head>
 <body>
 <header>
