@@ -37,7 +37,7 @@ class User {
 
 	
 	public function getUserById( $id ) {
-		$users = $this->_db->query( "SELECT * FROM" . TBL_UINFO . "WHERE user_id = $id" );
+		$users = $this->_db->query( "SELECT * FROM users_info WHERE user_id = '". $_SESSION['user_id']."'" );
 		$details = $users->fetch_assoc();
 		unset ($details['password']);
 		return $details;

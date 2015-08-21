@@ -32,7 +32,7 @@ $app->get( '/user/', function() use ( $user ) {
 
 $app->get( '/user-id/', function() use ($app, $user ) {
 	$obUser = $user->getUserById($_SESSION['user_id']);
-	$users = json_encode($obUser['0']) ;
+	$users = json_encode($obUser) ;
 	var_dump($users) ;
 });
 
