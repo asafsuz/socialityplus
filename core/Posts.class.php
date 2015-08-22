@@ -1,4 +1,5 @@
 <?php
+require_once dirname( __FILE__ ) . '/../config/db-tables.php';
 require_once dirname(__FILE__) . '/../lib/DB.class.php';
 
 class Posts {
@@ -10,7 +11,7 @@ class Posts {
 
 	public function createNewPost($details ) {
 		$result = $this->_db->query("INSERT INTO posts( user_id, post_content ,post_created )
-			                         VALUES (203,'".$details['new_post']."',NOW())");
+			                         VALUES (USER_ID,'".$details['new_post']."',NOW())");
 		return $result;
 	}
 

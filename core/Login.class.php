@@ -20,15 +20,17 @@ class Login {
 	    	WHERE user_email = '$email'  AND user_password = '".md5($password)."'");
        
      	if($query->num_rows){
-     		$some = $this->createSession($query->fetch_assoc());
+     		$this->createSession($query->fetch_assoc());
      		$_SESSION['login']=true;
 			return true;
-		{
+     	}else{
 			return false;
 		}	
 	}
+
+	public function logout(){
+		return session_destroy();
+	}
 	
 }
-}
-
 ?>

@@ -81,14 +81,15 @@ h1
 	border: 0px;
 	color: #ffffff;
 	opacity: 1.0;
+	cursor:pointer;
 }
 
-.userLogin
+#lofin-form
 {
 	margin-top: 30px;
 }
 
-.userLogin>input
+#login-form>input
 {
 	width: 330px;
 	height: 40px;
@@ -101,7 +102,7 @@ h1
 	color: white;
 }
 
-.userLogin>.logbutton
+#login-form>.logbutton
 {
 	width: 100px;
 	height: 40px;
@@ -111,4 +112,5 @@ h1
 	border: 0px;
 	color: #ffffff;
 	opacity: 1.0;
+	cursor: pointer;
 }

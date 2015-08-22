@@ -1,15 +1,16 @@
 <?php
+
 require 'Slim/Slim.php';
 \Slim\Slim::registerAutoloader();
 $app = new \Slim\Slim();
 
 $app->contentType( 'application/json' );
-
 require_once dirname( __FILE__ ) . '/../core/User.class.php';
 require_once dirname( __FILE__ ) . '/../core/Login.class.php';
 require_once dirname( __FILE__ ) . '/../core/Posts.class.php';
 $user = new User();
-
+$login = new Login();
+$post = new Posts();
 
 
 //function to verify if a session was created. If not the user is not aloud to enter home.php
@@ -52,14 +53,14 @@ $app->put( '/user/:id/', function( $id ) use ( $user, $app ) {
 	
 });
 
-$app->post( '/login/', function() use ( $app ) {
-	$login = new Login();
+$app->post( '/login/', 'authenticate', function() use ( $app, $login ) {
+	
 	$email = $app->request->post('email');
 	$password = $app->request->post('password');
 	if ( $login->match( $email, $password ) ){
 		echo json_encode( $_SESSION );
 	}else{
-		echo json_encode( $_SESSION );
+		echo 'there is no session';
 	}
 });
 
@@ -70,17 +71,14 @@ $app->get( '/login/', function() use ( $app ) {
 		echo 0;
 });
 
-$app->post('/send/', function() use ( $app ) {
-	$post = new Posts();
+$app->post('/send/','authenticate', function() use ( $app ) {
 	$new_post = json_decode( $app->request->getBody(),true );
 	$success = $post->createNewPost( $new_post );
 	return $success;
 });
 
-	$post = new Posts();
-	$app->get( '/send/:id/', function( $id ) use ( $post ) {	
-	echo json_encode( $post->getLastPost( $id ) );
-
+$app->get( '/logout', function() use ($app, $login) {
+	$login->logout();
 });
 
 

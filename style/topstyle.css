@@ -44,6 +44,11 @@ nav ul li
 	display: inline-block;
 	color: #ffffff;
 }
+
+ul li #logout
+{
+	cursor: pointer;
+}
 /***********End of Header page style***********/
 
 

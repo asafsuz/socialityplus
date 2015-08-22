@@ -58,7 +58,7 @@ $(document).ready(function(){
 
 		 $("#display-post").append( );
 		  $.ajax({
-				url: "api/send/:id",
+				url: "api/send",
 				type: "GET",
 				dataType: "JSON",
 				success: function( posts ){

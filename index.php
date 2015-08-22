@@ -34,10 +34,10 @@
 					<input type="password" id="repass" name="repassword" placeholder="Repeat Password" /><br><span class="repasswordError"></span>
 					<input class="button" type="button" value="REGISTER"><br>
 				</section>
-				<section class="userLogin">
+				<section id="login-form">
 					<input type="email" id="loginEmail" name="logemail" placeholder="Email">
-					<input type="password" id="loginPass" name="logpassword" placeholder="Password" >
-					<input type="button" class="logbutton"  value="LOGIN">
+					<input type="password" id="loginPass" name="logpassword" placeholder="Password" ><br><span class="loginError"></span>
+					<input type="button" class="logbutton" value="LOGIN">
 				</section>
 			</div>
 		</div>

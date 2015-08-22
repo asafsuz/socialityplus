@@ -5,8 +5,10 @@ $(document).ready(function(){
 			type: "GET",
 			data: JSON.stringify(details),
 			success: function( response ) {
-				console.log( response );
+				alert ('response');
 			}
 	})
 	}
+	
+	 
 });
