@@ -53,7 +53,7 @@ $app->put( '/user/:id/', function( $id ) use ( $user, $app ) {
 	
 });
 
-$app->post( '/login/', 'authenticate', function() use ( $app, $login ) {
+$app->post( '/login/', function() use ( $app, $login ) {
 	
 	$email = $app->request->post('email');
 	$password = $app->request->post('password');
@@ -71,11 +71,15 @@ $app->get( '/login/', function() use ( $app ) {
 		echo 0;
 });
 
-$app->post('/send/','authenticate', function() use ( $app ) {
+$app->post('/send/', function() use ( $app, $post ) {
 	$new_post = json_decode( $app->request->getBody(),true );
 	$success = $post->createNewPost( $new_post );
 	return $success;
 });
+/*$post = new Posts();
+	$app->get( '/send/:id/', function( $id ) use ( $post ) {	
+	echo json_encode( $post->getPostsByDate( $id ) );
+});*/
 
 $app->get( '/logout', function() use ($app, $login) {
 	$login->logout();

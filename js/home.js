@@ -10,13 +10,13 @@ $(document).ready(function(){
 	var userSecretPic;
 	var userSecretAbout;
 	var profilName;
-	
+	//Using the session user id to get all the information about the user , injecting the relevant details into the home.php page 
 	$.ajax({
 		url: "api/user-id/",
 		type: "GET",
 		dataType: "JSON",
 		success: function( posts ){
-	  	var details = $.json_decode(posts.responseText);
+	  	var details = $.json_decode(posts.response);
 	  	
 	  		userFirstName = details.user_firstname;
 			userLastName =details.user_lastname;
@@ -35,34 +35,44 @@ $(document).ready(function(){
 			$(".box-details").append(profilName,userBirtDay,userEmail);
 			}
 		});
-	
-	//this ajax comand send the content of the text area to DB 
-	$("input[type=submit]").on( "click", function(){
-		var newpost = $('textarea.text-content').val();
-		if ($.trim(newpost) != "") {
-			$.ajax({
-				url: "api/send/",
-				type: "POST",
-				dataType: "JSON",
-				data: JSON.stringify({	
-				 new_post: $(".text-content").val(),
-				 clear_status: $(".text-content").val('')
-				}),
-				success: function(response){
-					console.log(success);
-				} 
-			})	
-	
-		};
-	});	
 
-		 $("#display-post").append( );
+
+	//this ajax comand send the content of the text area to DB 
+ $("input[type=submit]").on ("click", function(){
+		var newpost = $('textarea.text-content').val();	
+		if ($.trim(newpost) != "") {
+			var div = ""; 
+			div += "<p>" + newpost + "</p>"	
+			$("#post_content").append(div);
+			$("#display_post").fadeIn();
+			
+		$.ajax({
+			url: "api/send/",
+			type: "POST",
+			dataType: "JSON",
+			data: JSON.stringify({	
+			 new_post: $(".text-content").val(),
+			 clear_status: $(".text-content").val('')
+			}),
+			success: function(response){
+			
+				console.log(response);
+			}
+		
+		})
+	}
+}); 
+
+
+
+
+	/*	 $("#display-post").append( );
 		  $.ajax({
 				url: "api/send",
 				type: "GET",
 				dataType: "JSON",
 				success: function( posts ){
-			  	var posts = $.parseJSON(posts.responseText);
+			  	var posts = $.parseJSON(posts.response);
 					var div = "";
 					$.each( posts, function(key, post  ) {
 						div += '<div class="display-post" style="border-bottom: 2px solid black; padding: 5px;" data_id="'+post.post_id +'">';
@@ -74,18 +84,9 @@ $(document).ready(function(){
 		         error:function(){
 					alert('Error loading post' );
 				}
-			})
+			})*/
 		
-});
+		
+	});
 	
 			
-		
-		
-	/*	('textarea.text-content').val('')
-		var div;
-					div+="<div>",
-					div+="<div>"+ response.post_content + "</div>",
-					div+="<div id=new_post ></div>",//css display none 
-					div+="<input type=text>",
-					div+="<input type=button>",//when click on id comment became display block
-					div+="</div>",*/

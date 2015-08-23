@@ -5,7 +5,7 @@ $(document).ready(function(){
 			type: "GET",
 			success: function(){
 				
-				window.location.href = index.php;
+				window.location.href = "index.php";
 			}
 		})
 	})

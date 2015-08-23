@@ -25,9 +25,14 @@ class Posts {
 
 	}
 
-	public function deletePost( $task_id ) {
-		$result = $this->_db->query( "DELETE FROM posts WHERE post_id = $task_id" );
-		return $result;
+	public function getPostsByDate(){
+	$result = $this->_db->query("SELECT * FROM posts  ORDER BY post_created DESC");
+	$postsByDate = array();
+	
+		while($row = $result->fetch_assoc())
+		$postsByDate[] = $row;
+		
+	return $postsByDate;
 	}
 
 	public function getAllPost() {
