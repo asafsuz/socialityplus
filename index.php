@@ -36,8 +36,8 @@
 				</section>
 				<section id="login-form">
 					<input type="email" id="loginEmail" name="logemail" placeholder="Email">
-					<input type="password" id="loginPass" name="logpassword" placeholder="Password" ><br><span class="loginError"></span>
-					<input type="button" class="logbutton" value="LOGIN">
+					<input type="password" id="loginPass" name="logpassword" placeholder="Password" >
+					<input type="button" class="logbutton" value="LOGIN"><span class="loginError"></span>
 				</section>
 			</div>
 		</div>

@@ -5,6 +5,7 @@
 		<title>Social Network</title>
 		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script  type="text/javascript" src="js/home.js"></script>
+		<script  type="text/javascript" src="js/pageTop.js"></script>
 		<link rel="stylesheet" href="style/topstyle.css">
 		<link rel="stylesheet" href="style/home.css">
 	</head>
@@ -17,7 +18,7 @@
 			<div id="search"><input class="field" type="text" placeholder="Search people, hashtags"></div>
 			<nav>
 				<ul>
-					<li id="yourname">Username</li>
+					<li id="yourname"></li>
 					<li><img src="imgs/profile_pic.png" alt="Your profile picture" title="Profile picture" id="profile-picture"></li>
 					<li><img src="imgs/edit_profile.png" alt="Edit your profile" title="Edit Profile" id="edit-profile"></li>
 					<li><img src="imgs/post.png" alt="Send a post to someone" title="Send a post" id="send-post"></li>

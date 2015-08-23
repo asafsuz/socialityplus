@@ -29,8 +29,9 @@ class Login {
 	}
 
 	public function logout(){
-		return session_destroy();
+		if($_SESSION != null){
+		session_destroy();
 	}
-	
 }
+};
 ?>

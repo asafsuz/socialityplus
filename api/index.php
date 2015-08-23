@@ -64,25 +64,25 @@ $app->post( '/login/', function() use ( $app, $login ) {
 	}
 });
 
-$app->get( '/login/', function() use ( $app ) {
-	if ( $_SESSION['login'] )
+/*$app->get( '/login/', function() use ( $app ) {
+	if ( $_SESSION )
 		echo 1;
 	else
 		echo 0;
-});
+});*/
 
 $app->post('/send/', function() use ( $app, $post ) {
 	$new_post = json_decode( $app->request->getBody(),true );
 	$success = $post->createNewPost( $new_post );
 	return $success;
 });
-/*$post = new Posts();
+$post = new Posts();
 	$app->get( '/send/:id/', function( $id ) use ( $post ) {	
 	echo json_encode( $post->getPostsByDate( $id ) );
-});*/
+});
 
 $app->get( '/logout', function() use ($app, $login) {
-	$login->logout();
+	session_destroy();
 });
 
 

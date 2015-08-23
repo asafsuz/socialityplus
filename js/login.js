@@ -9,16 +9,11 @@ $(document).ready(function(){
 				email: $("input[name=logemail]").val(),
 				password: $("input[name=logpassword]").val(),
 			},
-			
 			success: function(response){
 				if( !response.login ){
-					alert("No Session");
+					$('.loginError').text('Wrong email or password');
 					
 				}else{
-					/*var error = $('.loginError').text;
-					$('.loginError').text('Wrong email or password');
-					$("input[name=logemail]").val('');
-					$("input[name=logpassword]").val('');*/
 					window.location.href= 'home.php';
 				}	
 			}

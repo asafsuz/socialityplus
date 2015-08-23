@@ -60,8 +60,9 @@ class User {
 	}
 	
 	public function logout(){
-		$_SESSION['login'] = null;
+		if($_SESSION != null){
 		session_destroy();
 	}
+}
 }
 ?>
