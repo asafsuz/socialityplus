@@ -1,3 +1,4 @@
+<!-- The template_pageTop.php is the header of the index.php page and includes the logo and the nav tag for the menu -->
 <header>
 		<div id="pageTopInner">
 			<div class="Logo">

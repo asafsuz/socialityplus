@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Here is the first page of the program index.php-->
 	<head>
+<!-- At the head of the page are the require for script files used in the page
+     and the links to the style files used here -->
 		<meta charset="UTF-8" />
 		<title>Social Network</title>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -12,7 +15,9 @@
 		<link rel="stylesheet" href="style/register.css">
 	</head>
 <body>
+<!-- This page is formed by three parts: the heder of the page, so the php code calls this header to include -->
 <?php include_once("inc/template_pageTop.php");?>	
+<!-- Here start the main page of the index.php -->
 	<div id="pageMain">
 		<div id="mainMiddle">
 			<div id="pageMainLeft">
@@ -42,7 +47,6 @@
 			</div>
 		</div>
 	</div>
+<!-- At the bottom of the page comes the statment to include the footer part of the index.php page -->
 <?php include_once("inc/template_pageBottom.php");?>
 	
-</body>
-</html>
