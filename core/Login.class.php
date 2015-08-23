@@ -29,7 +29,7 @@ class Login {
 	}
 
 	public function logout(){
-		if($_SESSION != null){
+		if($_SESSION['login'] == true){
 		session_destroy();
 	}
 }

@@ -76,13 +76,14 @@ $app->post('/send/', function() use ( $app, $post ) {
 	$success = $post->createNewPost( $new_post );
 	return $success;
 });
-$post = new Posts();
+/*$post = new Posts();
 	$app->get( '/send/:id/', function( $id ) use ( $post ) {	
 	echo json_encode( $post->getPostsByDate( $id ) );
-});
+});*/
 
 $app->get( '/logout', function() use ($app, $login) {
-	session_destroy();
+	$success = $login->session_destroy();
+	return $success;
 });
 
 
