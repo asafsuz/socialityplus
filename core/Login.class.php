@@ -18,19 +18,21 @@ class Login {
 	public function match($email, $password) {
            $query = $this->_db->query("SELECT * FROM users
 	    	WHERE user_email = '$email'  AND user_password = '".md5($password)."'");
-       
-     	if($query=$query->num_rows){
-     		$result=$query->fetch_assoc();
-     		
-     		$userInfo = $this->_db->query("SELECT * FROM users_info  WHERE user_id =  " . $result['user_id']);
-     		$userInfo = $userInfo->fetch_assoc();
-     		
+     		if($query->num_rows == 1){
+     		$result = $this->createSession($query->fetch_assoc());
+     		//$result=$query->fetch_assoc();
      		$_SESSION['login']=$result['user_id'];
+     		
+     		
+ /*    		$userInfo = $this->_db->query("SELECT * FROM users_info  WHERE user_id =  " . $result['user_id']);
+      		$userInfo = $userInfo->fetch_assoc();
+
+     		
      		$_SESSION['userFirstname'] = $userInfo['user_firstname'];
-			$_SESSION['userProfPicture'] = $userInfo['user_profile_picture'];
+			$_SESSION['userProfPicture'] = $userInfo['user_profile_picture'];*/
+     		echo $result['user_id'];
+     		//return array('success'=>true);
      		
-     		
-     		return array('success'=>true);
 		}else{
 			$_SESSION['login'] = null;
 			return array('success'=>false);

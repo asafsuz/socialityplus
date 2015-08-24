@@ -1,6 +1,6 @@
 $(document).ready(function(){
 /*
- * The following script creates an event on click on the button that triggers the script
+ * The following script creates an event on click on the button logbo that triggers the script
  */
 	 $("input[type=button].logbutton").on( "click" ,function(){
 /*
