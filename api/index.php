@@ -54,14 +54,9 @@ $app->put( '/user/:id/', function( $id ) use ( $user, $app ) {
 });
 
 $app->post( '/login/', function() use ( $app, $login ) {
-	
 	$email = $app->request->post('email');
 	$password = $app->request->post('password');
-	if ( $login->match( $email, $password ) ){
-		echo json_encode( $_SESSION );
-	}else{
-		echo 'there is no session';
-	}
+	echo json_encode( $login->match( $email, $password ) );
 });
 
 /*$app->get( '/login/', function() use ( $app ) {

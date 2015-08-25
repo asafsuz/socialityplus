@@ -15,11 +15,13 @@ $(document).ready(function(){
  * The type of the method is post
  */
 			type: "POST",
-			dataType: "JSON",
+			dataType: "json",
+
+			/*
+			 * The data sended is taken from the input fields from the login part of the index.php file
+			 * and sended to the server (api/index.php).
+			*/
 			data: {
-/*
- * The data sended is taken from the input fields from the login part of the index.php file.
- */
 				email: $("input[name=logemail]").val(),
 				password: $("input[name=logpassword]").val(),
 			},
@@ -27,8 +29,8 @@ $(document).ready(function(){
  * If there is no match in the process taken place in the api/login, the user receive a warning
  */
 			success: function(response){
-				if( !response.login ){
-					$('.loginError').text('Wrong email or password');
+				if( response.success == false ){
+					$('.loginError').html('Wrong email or password');
 /*
  * If the match processed in the api/login return a true response, the user is redirected to the home.php page.
  */					
