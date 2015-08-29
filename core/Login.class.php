@@ -16,23 +16,21 @@ class Login {
 	}
 	
 	public function match($email, $password) {
-           $query = $this->_db->query("SELECT * FROM users WHERE user_email = '$email'  AND user_password = '".md5($password)."'");
-
-           if($query->num_rows == 1){
-     			$user = $this->createSession($query->fetch_assoc());
-     		
+		$query = $this->_db->query("SELECT * FROM users WHERE user_email = '$email'  AND user_password = '".md5($password)."'");
+			if($query->num_rows == 1){
+			$user = $this->createSession($query->fetch_assoc());
+			echo $user;
      		return array('success'=>true);
-     		
 		}else{
-			//$_SESSION['login'] = null;
 			return array('success'=>false);
 		}	
 	}
 
 	public function logout(){
-		if($_SESSION['login'] == true){
-		session_destroy();
+		if($_SESSION){
+			$nosession = session_destroy();
+			return $nosession;
+		}
 	}
-}
 };
 ?>

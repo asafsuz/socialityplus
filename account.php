@@ -34,7 +34,7 @@
 						<tr><td><select name="gender"><option value="male">Male</option><option value="female">Female</option></select><br>Select your gender (male or female)</td></tr>
 						<tr><td><input type="text" name="location"><br>Where do you live?</td></tr>
 						<tr><td><input type="text" name="website"><br>If you have a blog, personal page, enter it.</td></tr>
-						<tr><td><textarea rows="4" cols="50"></textarea><br>About me (160 characters or less)</td></tr>
+						<tr><td><textarea rows="4" cols="50" name="aboutme"></textarea><br>About me (160 characters or less)</td></tr>
 						<tr><td><input type="button" value="Save Changes" class="button"></td></tr>
 						</table>
 					</div>

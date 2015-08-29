@@ -40,7 +40,8 @@ class User {
 		$users = $this->_db->query( "SELECT * FROM users_info WHERE user_id = '". $_SESSION['user_id']."'" );
 		$details = $users->fetch_assoc();
 		unset ($details['password']);
-		print_r ($details);
+		var_dump($details);
+		return ($details);
 	}
 	
 	public function getUserByName( $user_nickname ){

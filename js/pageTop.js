@@ -11,32 +11,27 @@ $(document).ready(function(){
  */	
 	$('#logout').on( "click" ,function(){
 		$.ajax({
-			url: "api/logout",
+			url: "api/logout/",
 			type: "GET",
 			success: function(response){
 /*
  *  If the response received from the server is affirmative, the user is
  * redirect to the index.php page.
  */
-				if(response){
+				//if(response.success){
+				if(response.success == true){
 					window.location.href = "index.php";
 /*
  *  else, the user receive a alert window that the logout peocess didn't success.
  */
 				}else{
-					alert ("You didn't logout");
+					echo 'something went wrong!';
 				}
 			}
 		})
 	})
+});
 /*
  * Here is the request to get all the details of the user in session.
  */
-	$('#edit-profile').on( "click", function(){
-		$.ajax({
-			url: "api/user-id/",
-			type: "GET",
-			
-		})
-	})
-});
+

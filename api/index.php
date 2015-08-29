@@ -15,7 +15,7 @@ $post = new Posts();
 
 //function to verify if a session was created. If not the user is not aloud to enter home.php
 function authenticate() {
-	if (!$_SESSION['login']) {
+	if (!$_SESSION['user_id']) {
 		echo json_encode (array ( "error" => "no session"));
 		$app->halt (401);
 	}
@@ -32,7 +32,7 @@ $app->get( '/user/', function() use ( $user ) {
 
 
 $app->get( '/user-id/', function() use ($app, $user ) {
-	$obUser = $user->getUserById($_SESSION['user_id']);
+	$obUser = $user->getUserById($_SESSION);
 	$users = json_encode($obUser) ;
 	var_dump($users) ;
 });
@@ -59,12 +59,13 @@ $app->post( '/login/', function() use ( $app, $login ) {
 	echo json_encode( $login->match( $email, $password ) );
 });
 
-/*$app->get( '/login/', function() use ( $app ) {
-	if ( $_SESSION )
-		echo 1;
-	else
-		echo 0;
-});*/
+$app->get( '/login/', function() use ( $app ) {
+	if ( $_SESSION ){
+		echo json_decode ($_SESSION['user_id']);
+	}else{
+		echo 'no session';
+	}
+});
 
 $app->post('/send/', function() use ( $app, $post ) {
 	$new_post = json_decode( $app->request->getBody(),true );
@@ -76,9 +77,9 @@ $app->post('/send/', function() use ( $app, $post ) {
 	echo json_encode( $post->getPostsByDate( $id ) );
 });*/
 
-$app->get( '/logout', function() use ($app, $login) {
-	$success = $login->session_destroy();
-	return $success;
+$app->get( '/logout/', function() use ($app, $login) {
+	$login = new Login();
+	echo $login->logout('user_id');
 });
 
 
