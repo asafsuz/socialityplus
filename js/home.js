@@ -1,5 +1,14 @@
 $(document).ready(function(){
 	
+	$.ajax({
+		type: "GET",
+		url: "api/login",
+		success: function( details ){
+			$user_id = details;
+			console.log ($user_id);
+		}
+	});
+	
 	var userFirstName;
 	var userLastName;
 	var userAbout;

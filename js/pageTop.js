@@ -25,7 +25,7 @@ $(document).ready(function(){
  *  else, the user receive a alert window that the logout peocess didn't success.
  */
 				}else{
-					echo 'something went wrong!';
+					alert ("something went wrong!");
 				}
 			}
 		})
