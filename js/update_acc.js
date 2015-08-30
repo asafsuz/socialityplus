@@ -5,10 +5,26 @@ $(document).ready(function(){
 			url: "api/login",
 			success: function( details ){
 				$user_id = details;
-				console.log ($user_id);
+				//console.log ($user_id);
 			}
-				
-				
+			
+			$("div#general").on('click', function(){
+				var user_id = $user_id;
+				var firstname = $("name=fname").val();
+				var lastname = $("name=lname").val();
+				$.ajax({
+					type: "GET",
+					url: "api/user/" + user_id + "/",
+					dataType: JSON,
+					success: function( details ){
+						console.log(details);
+						$.each(details, function(detail){
+							form.find("input[name=fname]").val(detail.user_firstname);
+							form.find("input[name=lame]").val(detail.user_lastname);
+					}
+				})
+			});
+		});
 				
 				
 				/*
@@ -25,8 +41,7 @@ $(document).ready(function(){
 			error: function(){
 				alert('error loading data');
 			}*/
-		})
-});
+		});
 		
 
 

@@ -43,10 +43,10 @@
 				</section>
 				
 				<aside id="settings">
-					<div class="set">Settings</div>
-					<div class="set"><input type="button" value="General" id="set-general"></div>
-					<div class="set"><input type="button" value="Profile Picture" id="set-profpic"></div>
-					<div class="set"><input type="button" value="Password" id="set-password"></div>
+					<div id="set">Settings</div>
+					<div id="general">General</div>
+					<div id="profpic">Profile Picture</div>
+					<div id="pass">Set Password</div>
 				</aside>
 				
 			</div>

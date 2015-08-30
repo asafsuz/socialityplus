@@ -79,7 +79,7 @@ $app->post('/send/', function() use ( $app, $post ) {
 
 $app->get( '/logout/', function() use ($app, $login) {
 	$login = new Login();
-	echo $login->logout('user_id');
+	echo $login->logout();
 });
 
 

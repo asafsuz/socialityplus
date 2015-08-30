@@ -28,8 +28,8 @@ class Login {
 
 	public function logout(){
 		if($_SESSION){
-			$nosession = session_destroy();
-			return $nosession;
+			session_destroy();
+			return true;
 		}
 	}
 };

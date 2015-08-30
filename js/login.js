@@ -37,7 +37,7 @@ $(document).ready(function(){
  * If the match processed in the api/login return a true response, the user is redirected to the home.php page.
  */					
 				}else{
-					window.location.href= 'home.php';
+					window.location.href= 'account.php';
 				}	
 			}
 		})
