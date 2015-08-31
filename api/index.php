@@ -32,9 +32,8 @@ $app->get( '/user/', function() use ( $user ) {
 
 
 $app->get( '/user-id/', function() use ($app, $user ) {
-	$obUser = $user->getUserById($_SESSION);
-	$users = json_encode($obUser) ;
-	var_dump($users) ;
+	$obUser = $user->getUserById($_SESSION['user_id']);
+	echo $users = json_encode($obUser) ; 
 });
 
 $app->post( '/user/', function() use ( $user, $app ) {
@@ -70,12 +69,15 @@ $app->get( '/login/', function() use ( $app ) {
 $app->post('/send/', function() use ( $app, $post ) {
 	$new_post = json_decode( $app->request->getBody(),true );
 	$success = $post->createNewPost( $new_post );
-	return $success;
+	echo $success;
 });
-/*$post = new Posts();
-	$app->get( '/send/:id/', function( $id ) use ( $post ) {	
-	echo json_encode( $post->getPostsByDate( $id ) );
-});*/
+
+$post = new Posts();
+	$app->get( '/send/', function() use ( $post ) {	
+	$lastPost = json_encode( $post->getLastPost( $post ));
+	echo $lastPost;
+	
+});
 
 $app->get( '/logout/', function() use ($app, $login) {
 	$login = new Login();

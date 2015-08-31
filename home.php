@@ -7,7 +7,7 @@
 						<div id="display_post">
 							<div id="post_sender_details">
 								<img alt="" src="">
-								<div id="delet-post">X</div>
+								<div id="delet-post"><?php session_start();  echo $_SESSION['user_id'];?></div>
 								<div id="post_content"></div>
 							</div>
 							<div id="comment_sender_details">

@@ -10,17 +10,20 @@ class Posts {
 	}
 
 	public function createNewPost($details ) {
-		$result = $this->_db->query("INSERT INTO posts( user_id, post_content ,post_created )
-			                         VALUES (USER_ID,'".$details['new_post']."',NOW())");
-		return $result;
+		$result = $this->_db->query("INSERT INTO posts ( user_id, post_content, post_created)
+			VALUES ('$_SESSION[user_id]', '".$details['new_post']."', NOW());");
+			$post = $this->_db->query( $result );
+			
+			return $result;
 	}
+	
+ 
 
 	public function getLastPost() {
 		$result = $this->_db->query("SELECT * FROM posts ORDER BY post_id  DESC limit 1");
 		$getLastPosts = array();
 		while($row = $result->fetch_assoc());
 		$getLastPosts[] = $row;
-		
 		return $getLastPosts;
 
 	}
@@ -42,6 +45,8 @@ class Posts {
 			$posts[] = $row;
 		return $posts;
 	}
+	
+	
 }
 
 ?>

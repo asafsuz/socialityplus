@@ -5,45 +5,26 @@ $(document).ready(function(){
 		url: "api/login",
 		success: function( details ){
 			$user_id = details;
-			console.log ($user_id);
+			//$(".box-welcome").html($user_id);
 		}
 	});
-	
-	var userFirstName;
-	var userLastName;
-	var userAbout;
-	var userBirtDay;
-	var userEmail;
-	var userCreated;
-	var userProfilePic;
-	var userSecretPic;
-	var userSecretAbout;
-	var profilName;
+
 	//Using the session user id to get all the information about the user , injecting the relevant details into the home.php page 
 	$.ajax({
 		url: "api/user-id/",
 		type: "GET",
 		dataType: "JSON",
-		success: function( posts ){
-	  	var details = $.json_decode(posts.response);
-	  	
-	  		userFirstName = details.user_firstname;
-			userLastName =details.user_lastname;
-			userAbout =details.user_about;
-			userBirtDay =details.user_birthdate;
-			userEmail =details.user_email;
-			userCreated =details.user_created;
-			userProfilePic =details.user_profile_picture;
-			userSecretPic =details.user_secret_picture;
-			userSecretAbout = details.user_secret_about;
-			profilName = details.user_firstname+" "+user_lastname;
-			
-		    $(".box-welcome").append(userFirstName);
-			$(".box-welcome").append(userSecretPic);
-			$("post-user-name").append(profilName );
-			$(".box-details").append(profilName,userBirtDay,userEmail);
-			}
-		});
+		success: function( response ){
+		 	
+		    	$(".box-welcome").html(response.user_birthdate);
+		    	//$(".box-welcome").append"<br/><div>"+response.userSecretPic+"</div>");
+				$("post-user-name").html(response.user_firstname+" "+response.user_lastname );
+				$(".box-details").html(response.user_firstname+" "+response.user_lastname, response.user_birthdate, response.user_email);
+		    	
+		    	
+		    }
+	
+});
 
 
 	//this ajax comand send the content of the text area to DB 
@@ -75,15 +56,15 @@ $(document).ready(function(){
 
 
 
-	/*	 $("#display-post").append( );
+	 $("#display-post").append();
 		  $.ajax({
 				url: "api/send",
 				type: "GET",
 				dataType: "JSON",
 				success: function( posts ){
-			  	var posts = $.parseJSON(posts.response);
+			  	var posts = JSON.parse(posts.response);
 					var div = "";
-					$.each( posts, function(key, post  ) {
+					$.each( posts, function(key, post) {
 						div += '<div class="display-post" style="border-bottom: 2px solid black; padding: 5px;" data_id="'+post.post_id +'">';
 						div += '<p>' + content + '</p>';
 						div += '</div>';
@@ -93,7 +74,7 @@ $(document).ready(function(){
 		         error:function(){
 					alert('Error loading post' );
 				}
-			})*/
+			})
 		
 		
 	});

@@ -98,6 +98,12 @@ body
 	font-weight: bold;
 	padding: 8px 0 0 5px;
 }
+.box-welcome
+{
+    border: 1px solid black;
+    height: 27px;
+    margin-top: 15px;
+}
 .welcome
 {
 	width: 100%;
