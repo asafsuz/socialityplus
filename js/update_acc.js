@@ -8,27 +8,22 @@ $(document).ready(function(){
 			console.log ($user_id);
 		}
 	});
-	/*function populate( details ) {
-		var form = $("#acc-profile-fields #fields");
-		form.find("input[name=firstname]").val( details.user_firstname );
-		form.find("input[name=lastname]").val( details.user_lastname );
-		form.find("input[name=email]").val( details.user_email );*/
-		
 	
 	$.ajax({
 		  url: "api/user-id/",
 		  type: "GET",
 		  dataType: "JSON",
 		  success: function( detail ){
-			  var form = $("#acc-profile-fields #fields");
-			  find("input[name=fname]").html(detail.user_firstname);
-			  find("input[name=lame]").html(detail.user_lastname);
+			  
+			  $("input.fname").html(detail.user_firstname);
 		}
 	})
 });
 				
 				
 				/*
+			  find$("input[name=fname]").html(detail.user_firstname);
+			  find("input[name=lame]").html(detail.user_lastname);
 				$.each(details, function(detail){
 					form.find("input[name=fname]").val(detail.user_firstname);
 					form.find("input[name=lame]").val(detail.user_lastname);

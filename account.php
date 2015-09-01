@@ -27,7 +27,7 @@
 					</div>
 					<div id="acc-profile-fields">
 						<table id="fields">
-						<tr><td><input type="text" name="fname"><br>Enter your first name</td></tr>
+						<tr><td><input type="text" name="fname" class="fname"><br>Enter your first name</td></tr>
 						<tr><td><input type="text" name="lname"><br>Enter your last name</td></tr>
 						<tr><td><input type="email" name="email"><br>E-mail will not be displayed</td></tr>
 						<tr><td><input type="date" name="bdate"><br>Select the date you were born</td></tr>
