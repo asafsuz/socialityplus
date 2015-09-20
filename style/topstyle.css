@@ -45,10 +45,12 @@ nav ul li
 	color: #ffffff;
 }
 
-ul li #logout
+ul li #logout, ul li #edit-profile, ul li #search-google
 {
 	cursor: pointer;
 }
+
+ul li #edit-profile
 /***********End of Header page style***********/
 
 

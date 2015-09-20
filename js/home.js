@@ -18,7 +18,7 @@ $(document).ready(function(){
 		 	
 		    	$(".box-welcome").html(response.user_birthdate);
 		    	//$(".box-welcome").append"<br/><div>"+response.userSecretPic+"</div>");
-				$("post-user-name").html(response.user_firstname+" "+response.user_lastname );
+				$("post-user-name").val(response.user_firstname+" "+response.user_lastname );
 				$(".box-details").html(response.user_firstname+" "+response.user_lastname, response.user_birthdate, response.user_email);
 		    	
 		    	

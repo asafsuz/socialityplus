@@ -19,7 +19,7 @@ $(document).ready(function(){
  * redirect to the index.php page.
  */
 				//if(response.success){
-				if(response.success == true){
+				if(response){
 					window.location.href = "index.php";
 /*
  *  else, the user receive a alert window that the logout peocess didn't success.
@@ -29,6 +29,13 @@ $(document).ready(function(){
 				}
 			}
 		})
+	})
+	$('#edit-profile').on( "click" ,function(){
+		window.location.href = "account.php";
+	});
+	
+	$('#search-google').on( "click", function(){
+		window.open("http://www.google.com");
 	})
 });
 /*
