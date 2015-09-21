@@ -36,11 +36,13 @@ class User {
 	}
 
 	
-	public function getUserById( $id ) {
-		$users = $this->_db->query( "SELECT * FROM" . TBL_UINFO . "WHERE user_id = $id" );
+	public function getUserById( $user_id ) {
+		$users = $this->_db->query( "SELECT * FROM users_info WHERE user_id = '". $_SESSION['user_id']."'" );
 		$details = $users->fetch_assoc();
 		unset ($details['password']);
-		return $details;
+		return ($details);
+		
+	
 	}
 	
 	public function getUserByName( $user_nickname ){
@@ -58,5 +60,11 @@ class User {
 	public function deleteUser( $id ) {
 		return $this->_db->query( "DELETE FROM" . TBL_UINFO . "WHERE user_id = $id" );
 	}
+	
+	public function logout(){
+		if($_SESSION != null){
+		session_destroy();
+	}
+}
 }
 ?>

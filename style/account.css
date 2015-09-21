@@ -11,29 +11,30 @@ body
 	width: 980px;
 	height: 550px;
 	margin: 0 auto;
-	border: 1px solid yellow;
 }
 
 #member-account
 {
 	width: 70%;
-	height: 780px;
+	height: 730px;
 	background: white;
 	margin-top: 20px;
 	border: 1px solid silver;
 	float: left;
 }
 
+
 #settings
 {
-	height: 500px;
+	height: 145px;
 	float: right;
 	width: 27%;
 	margin-top: 20px;
 	border: 1px solid silver;
+	background: white;
 }
 
-.title
+#member-account .title
 {
 	width: 680px;
 	height: 30px;
@@ -87,7 +88,36 @@ img
 	margin-left: 20px;
 }
 
+.set
+{
+	width: 255px;
+	border-bottom: 1px solid silver;
+	height: 25px;
+	background: white;
+	padding: 10px 0 0 10px;
+}
+#set:nth-child(1)
+{
+	background: #F0F0F0;
+    height: 30px;
+    font-weight: bold;
+    padding: 8px 0 0 5px;
+}
+#general, #profpic, #pass
+{
+	height: 30px;
+    padding: 8px 0 0 5px;
+}
+#general:hover, #profpic:hover, #pass:hover
+{
+	font-weight: bold;
+	cursor: pointer;
+}
+
+
+
 .footer
 {
+	margin-top: 5px;
 	clear: both;
 }

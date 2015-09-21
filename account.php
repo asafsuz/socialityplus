@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<title>Social Network - Account page</title>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-		<script  type="text/javascript" src="js/account.js"></script>
+		<script  type="text/javascript" src="js/update_acc.js"></script>
 		<link rel="stylesheet" href="style/account.css">
 	</head>
 	<body>
@@ -27,18 +27,28 @@
 					</div>
 					<div id="acc-profile-fields">
 						<table id="fields">
-						<tr><td><input type="text" name="fname"><br>Enter your first name</td></tr>
-						<tr><td><input type="text" name="lname"><br>Enter your last name</td></tr>
-						<tr><td><input type="email" name="email"><br>E-mail will not be displayed</td></tr>
-						<tr><td><input type="date" name="bday"><br>Select the date you were born</td></tr>
-						<tr><td><select name="gender"><option value="male">Male</option><option value="female">Female</option></select><br>Select your gender (male or female)</td></tr>
-						<tr><td><input type="text" name="location"><br>Where do you live?</td></tr>
-						<tr><td><input type="text" name="website"><br>If you have a blog, personal page, enter it.</td></tr>
-						<tr><td><textarea rows="4" cols="50"></textarea><br>About me (160 characters or less)</td></tr>
+						<tr><td><input type="text" name="fname" class="fname"><br>Enter your first name</td></tr>
+						<tr><td><input type="text" name="lname" class="lname"><br>Enter your last name</td></tr>
+						<tr><td><input type="email" name="email" class="email"><br>E-mail will not be displayed</td></tr>
+						<tr><td><input type="date" name="bdate" class="bday"><br>Select the date you were born</td></tr>
+						<tr><td><select name="gender"><option value="male" class="gender">Male</option><option value="female">Female</option></select><br>Select your gender (male or female)</td></tr>
+						<tr><td><input type="text" name="location" class="location"><br>Where do you live?</td></tr>
+						<tr><td><input type="text" name="website" class="website"><br>If you have a blog, personal page, enter it.</td></tr>
+						<tr><td><textarea rows="4" cols="50" name="aboutme" class="about"></textarea><br>About me (160 characters or less)</td></tr>
+						<tr><td><input type="button" value="Save Changes" class="button"></td></tr>
 						</table>
 					</div>
+	
+					
 				</section>
-				<aside id="settings"></aside>
+				
+				<aside id="settings">
+					<div id="set">Settings</div>
+					<div id="general">General</div>
+					<div id="profpic">Profile Picture</div>
+					<div id="pass">Set Password</div>
+				</aside>
+				
 			</div>
 			
 			<p class="footer"><?php include_once("inc/template_pageBottom.php");?></p>
